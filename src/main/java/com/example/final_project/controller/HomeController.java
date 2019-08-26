@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  */
 @Controller
 public class HomeController {
-    @RequestMapping(value = {"/home", "/thymeleafmerge/thymeleafExtend.html"})
+    @RequestMapping(value = {"/index", "/thymeleafmerge/thymeleafExtend.html"})
     public void action(){
     }
 }
