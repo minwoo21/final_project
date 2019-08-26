@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <!-- 부트스트랩 링크연결 -->
+   <th:block th:replace="fragments/commonHead"></th:block>
+</head>
+
+<body>
+    <!-- 상단 헤더 -->
+    <th:block th:replace="fragments/header :: common_navbar"></th:block>
+   
+    <div class=" my-5 py-5 text-center bg-secondary">
+        <h2>Main Content</h2>
+    </div>
+
+    <!--하단 푸터-->
+    <th:block th:replace="fragments/footer "></th:block>
+
+</body>
+
+</html>

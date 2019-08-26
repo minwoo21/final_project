@@ -1,0 +1,35 @@
+
+<!--상단 내비게이션-->
+<nav th:fragment="common_navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+    <a href="/home/index" class="navbar-brand">Newstudy</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+        aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-between" id="navbarToggler">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+            </li>
+            <li class="nav-item">
+                <a href="/home/lecture" class="nav-link">강의</a>
+            </li>
+            <li class="nav-item">
+                <a href="/home/homework" class="nav-link">과제</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a href="/home/mypage" class="nav-link">(구현필요)마이페이지</a>
+            </li>
+            <li class="nav-item">
+                <a href="/home/customer" class="nav-link">(구현필요)고객지원</a>
+            </li>
+            <form class="form-inline my-2 my-lg-0">
+                <div class="btn-group" role="group">
+                    <a href="/home/signup" class="btn btn-outline-dark" role="button">회원가입</a>
+                    <a href="/home/login" class="btn btn-outline-dark" role="button">로그인</a>
+            </form>
+        </ul>
+    </div>
+
+</nav>

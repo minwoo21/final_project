@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+   <th:block th:replace="fragments/commonHead"></th:block>
+    <style>
+        li {
+            list-style: none
+        }
+
+        #menu1,
+        #menu2 {
+            display: none;
+        }
+    </style>
+
+</head>
+
+<body>
+    <th:block th:replace="fragments/header :: common_navbar"></th:block>
+    <!--베스트 과제-->
+    <div class="row no-gutters justify-content-center">
+        <div class="col-6">
+            <h6>이번 주 베스트 과제 <span class="badge badge-secondary">more</span></h6>
+        </div>
+    </div>
+    <div class="row no-gutters justify-content-center">
+        <div class="col-6">
+            <div id="carouselMain" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselMain" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselMain" data-slide-to="1"></li>
+                    <li data-target="#carouselMain" data-slide-to="2"></li>
+                    <a class="carousel-control-prev" href="#carouselMain" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselMain" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </ol>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="card bg-dark">
+                            <a href="/homework/detail" class="text-muted">
+                                <img class="card-img-top" th:src="@{/img/main01.png}" alt="thumbnail">
+                            </a>
+                            <div class="card-body">
+                                <a href="/homework/detail" class="text-muted">
+                                    <h5 class="card-title text-white">Javascript Callback 예제</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">by JaewoongByeon</h6>
+                                    <p class="card-text text-muted">자바스크립트 callback 예제입니다</p>
+                                </a>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card bg-dark">
+                            <a href="/homework/detail" class="text-muted">
+                                <img class="card-img-top" th:src="@{/img/main01.png}" alt="thumbnail">
+                            </a>
+                            <div class="card-body">
+                                <a href="/homework/detail" class="text-muted">
+                                    <h5 class="card-title text-white">Javascript Callback 예제</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">by JaewoongByeon</h6>
+                                    <p class="card-text text-muted">자바스크립트 callback 예제입니다</p>
+                                </a>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="card bg-dark">
+                            <a href="/homework/detail" class="text-muted">
+                                <img class="card-img-top" th:src="@{/img/main01.png}" alt="thumbnail">
+                            </a>
+                            <div class="card-body">
+                                <a href="/homework/detail" class="text-muted">
+                                    <h5 class="card-title text-white">Javascript Callback 예제</h5>
+                                    <h6 class="card-subtitle mb-2 text-muted">by JaewoongByeon</h6>
+                                    <p class="card-text text-muted">자바스크립트 callback 예제입니다</p>
+                                </a>
+                                <br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--콘텐츠 컨테이너-->
+
+    <div class="container">
+
+
+
+        <div class="row mt-4 p-3">
+            <!--달력 부분 시작-->
+            <table class="col-lg-6 col-sm-12 table table-striped table-sm table-borderless" name="calender">
+                <thead class="thead-dark">
+                    <tr class="text-center">
+                        <th colspan="7"><em>JULY 2019</em></th>
+                    </tr>
+                    <tr>
+                        <th>S</th>
+                        <th>M</th>
+                        <th>T</th>
+                        <th>W</th>
+                        <th>T</th>
+                        <th>F</th>
+                        <th>S</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                    </tr>
+                    <tr>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                    </tr>
+                    <tr>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                    </tr>
+                    <tr>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td>31</td>
+                        <td class="text-muted">1</td>
+                        <td class="text-muted">2</td>
+                        <td class="text-muted">3</td>
+                    </tr>
+                    <tr class="text-muted">
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <!--달력 부분 끝-->
+            <!-- 달력 클릭시 과제나 메모 나오기 -->
+
+            <ul class="col-lg-3 col-sm-12">
+                <li class="font-weight-bold">
+                    7월 29일
+                </li>
+                <li>
+                    <input type="checkbox"> jquery_Form
+                </li>
+                <li>
+                    <input type="checkbox"> jquery_Submit
+                </li>
+                <li class="dropdown">
+                    <script>
+                        $(function () {
+                            $("#dropdown1").click(function () {
+                                $("#menu1").slideToggle("slow");
+                            });
+                        });
+                    </script>
+                    <div class="" id="">
+                        <button class="btn btn-primary border border-white" id="dropdown1">jquery_Modal</button>
+                    </div>
+                    <!--dorpdown 메뉴& dropright-->
+                    <div class="text-muted" id="menu1">
+                        <div><input type="checkbox">disabled</div>
+                        <div><input type="checkbox">disabled selected</div>
+                        <div><input type="checkbox">disabled sindeterminate</div>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="col-lg-3 col-sm-12">
+                <li class="font-weight-bold">
+                    7월 30일
+                </li>
+                <li>
+                    <input type="checkbox"> jquery_Form
+                </li>
+                <li>
+                    <input type="checkbox"> jquery_Submit
+                </li>
+                <li class="dropdown">
+                    <script>
+                        $(function () {
+                            $("#dropdown2").click(function () {
+                                $("#menu2").slideToggle("slow");
+                            });
+                        });
+                    </script>
+                    <div class="">
+                        <button class="btn btn-primary border border-white " id="dropdown2">jquery_Modal</button>
+                    </div>
+                    <!--dorpdown 메뉴& dropright-->
+                    <div class="text-muted" id="menu2">
+                        <div><input type="checkbox">disabled</div>
+                        <div><input type="checkbox">disabled selected</div>
+                        <div><input type="checkbox">disabled sindeterminate</div>
+                    </div>
+                </li>
+            </ul>
+            <!-- 달력 클릭시 과제나 메모 나오기  끝-->
+
+        </div>
+
+    </div>
+    <div>
+        <ul>
+            <li><a href="/home/index">index</a></li>
+            <li><a href="/home/calender">calender</a></li>
+            <li><a href="/home/homework">homework</a></li>
+            <li><a href="/home/homework_detail">homework_detail</a></li>
+            <li><a href="/home/lecture">lecture</a></li>
+            <li><a href="/home/lecture_detail">lecture_detail</a></li>
+
+            <li><a href="/home/login">login</a></li>
+            <li><a href="/home/signup">signup</a></li>
+            <li><a href="/home/template">template(미구현)</a></li>
+        </ul>
+    </div>
+
+    <!--하단 푸터-->
+    <th:block th:replace="fragments/footer "></th:block>
+
+</body>
+
+</html>
