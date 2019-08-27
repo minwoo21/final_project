@@ -21,11 +21,11 @@
 <body>
     <!-- navbar  -->
     <div class="w3-bar bg-primary pr-4 w3-text-white">
-        <button id="openNav" class="w3-bar-item w3-button bg-primary w3-xlarge " onclick="w3_open()">&#9776;</button>
+        <button id="openNav" class="w3-bar-item w3-button bg-primary w3-xlarge mx-2" onclick="w3_open()">&#9776;</button>
         <form method="POST">
             <input type="hidden" value="">
-            <div class="w3-left row">
-                    <button class="w3-bar-item w3-button w3-xlarge " formaction="#" formmethod="POST">Home</button>
+            <div class="w3-left row mx-1">
+                <button class="w3-bar-item w3-button w3-xlarge " formaction="#" formmethod="POST">Home</button>
                 <button class="w3-bar-item w3-button w3-xlarge " formaction="#" formmethod="POST">내강의</button>
                 <button class="w3-bar-item w3-button w3-xlarge " formaction="#" formmethod="POST">강의신청</button>
                 <button class="w3-bar-item w3-button w3-xlarge " formaction="#" formmethod="POST">내 할일</button>
@@ -40,9 +40,12 @@
     
     <!-- sidebar -->
     <div class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-sand" style="display:none" id="mySidebar">
-        <a href="#" class="w3-bar-item w3-button">Link 1</a>
-        <a href="#" class="w3-bar-item w3-button">Link 2</a>
-        <a href="#" class="w3-bar-item w3-button">Link 3</a>
+        <form>
+            <button class="w3-bar-item w3-button w3-xlarge " formaction="/class/main" formmethod="POST">메인</button>
+            <button class="w3-bar-item w3-button w3-xlarge " formaction="/class/notice" formmethod="POST">공지사항</button>
+            <button class="w3-bar-item w3-button w3-xlarge " formaction="/class/introduction" formmethod="POST">강의소개</button>
+            <button class="w3-bar-item w3-button w3-xlarge " formaction="/class/homework" formmethod="POST">내 과제</button>
+        </form>
     </div>
       
     <div id="main">
