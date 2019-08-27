@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <!-- 공통 css, js, meta tag -->
+    <th:block th:replace="fragments/commonHead"></th:block>
+    <!-- 로그인 아이콘 -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+        integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <!-- 상단 로고 -->
+    <div class="container">
+        <div class="text-center mb-3" style="font-size:4rem;">NewStudy</div>
+    </div>
+    <th:block th:replace="card"></th:block>
+    <!-- 공통 footer -->
+    <th:block th:replace="fragments/footer"></th:block>
+</body>
+
+</html>
