@@ -17,7 +17,11 @@ public class HomeController {
         return "login";
     }
 
-    @RequestMapping(value = { "/login/*", "/layout/*" })
+    @RequestMapping(value = { "/signup", "/layout/*" })
     public void test() {
+    }
+
+    @RequestMapping(value = { "/lessons"})
+    public void lessons() {        
     }
 }
