@@ -12,10 +12,10 @@ public class HomeController {
     public void action() {
     }
 
-    @RequestMapping(value = "/")
-    public String index() {
-        return "login";
-    }
+    // @RequestMapping(value = "/")
+    // public String index() {
+    //     return "login";
+    // }
 
     @RequestMapping(value = { "/signup", "/layout/*" })
     public void test() {
