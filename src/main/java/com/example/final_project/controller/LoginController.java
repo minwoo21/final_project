@@ -17,7 +17,7 @@ public class LoginController {
             ModelAndView modelandView) {
         Boolean loginBoolean = (paramMap.get("login") == "login") ? true : false;
         if (loginBoolean == true) {
-            modelandView.setViewName(viewName);
+            // modelandView.setViewName(viewName);
         } else {
 
         }

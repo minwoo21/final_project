@@ -14,10 +14,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
 @Controller
-@RequestMapping(value = { "/class" })
 public class ClassController {
 
-    private final static String MAPPING = "/class/";
+    private final static String MAPPING = "class/";
 
     @Autowired
     private ClassService service;
@@ -32,6 +31,8 @@ public class ClassController {
 		if ("main".equals(action)) {
 			resultMap = service.getObject(paramMap);
 		} else if ("notice".equals(action)) {
+            resultMap = service.getList(paramMap);
+            action = "notice";
 		} else if ("update".equals(action)) {
 			resultMap = service.updateObject(paramMap);
 			action = "read";

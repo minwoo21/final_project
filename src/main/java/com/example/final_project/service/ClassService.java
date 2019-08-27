@@ -3,7 +3,8 @@ package com.example.final_project.service;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.example.final_project.repository.ShareDao;
+import com.example.final_project.dao.ShareDao;
+import com.example.final_project.repository.ClassRepository;
 import com.example.final_project.util.CommonUtil;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,7 +14,7 @@ import org.springframework.stereotype.Service;
 public class ClassService {
 
 	@Autowired
-	private ClassService repository;
+	private ClassRepository repository;
 
 	@Autowired
 	private ShareDao dao;
@@ -33,7 +34,7 @@ public class ClassService {
 	}
 
 	public Object getObject(Object dataMap) {
-		String sqlMapId = "student.read";
+		String sqlMapId = "student.list";
 
 		Object resultObject = dao.getObject(sqlMapId, dataMap);
 

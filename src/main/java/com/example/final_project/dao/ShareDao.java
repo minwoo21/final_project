@@ -1,4 +1,4 @@
-package com.example.final_project.repository;
+package com.example.final_project.dao;
 
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;

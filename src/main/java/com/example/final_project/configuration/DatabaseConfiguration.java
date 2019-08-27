@@ -1,4 +1,4 @@
-package com.example.spring_boot.configuration;
+package com.example.final_project.configuration;
 
 import javax.sql.DataSource;
 
