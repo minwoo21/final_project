@@ -3,7 +3,7 @@ package com.example.final_project.service;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.example.final_project.dao.ShareDao;
+import com.example.final_project.dao.ClassDao;
 import com.example.final_project.repository.ClassRepository;
 import com.example.final_project.util.CommonUtil;
 
@@ -17,24 +17,22 @@ public class ClassService {
 	private ClassRepository repository;
 
 	@Autowired
-	private ShareDao dao;
+	private ClassDao dao;
 
 	@Autowired
 	private CommonUtil commonUtil;
 
 	public Object getList(Object dataMap) {
-		String sqlMapId = "student.list";
+		String sqlMapId = "class.list";
 
 		Object resultObject = new HashMap<>();
-		// ((Map<String, Object>) resultObject).put("resultList", dao.getList(sqlMapId,
-		// dataMap));
 		((Map<String, Object>) resultObject).put("resultList", repository.findAll());
 
 		return resultObject;
 	}
 
 	public Object getObject(Object dataMap) {
-		String sqlMapId = "student.list";
+		String sqlMapId = "class.read";
 
 		Object resultObject = dao.getObject(sqlMapId, dataMap);
 

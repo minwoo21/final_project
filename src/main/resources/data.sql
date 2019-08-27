@@ -1,9 +1,3 @@
-insert into student
-values(10001,'Ranga', 'E1234567');
-insert into student
-values(10002,'Ravi', 'A1234568');
-
-
 insert into MEMBER
 values(14671,'user1','1234','홍길동','학생','user1@gmail.com','010-1111-1111','01010','가나','다나','101','0101');
 insert into MEMBER
@@ -46,3 +40,11 @@ insert into LESSON_MEMBER
 values(004, 14674, 0009);
 insert into LESSON_MEMBER
 values(005, 14675, 0009);
+
+
+insert into LESSON_NOTICE
+values(001, '공지 1', '우앙', '2019-08-27','와아앙앙 미쳤ㄲㄸㄱ러러러ㅓ말');
+insert into LESSON_NOTICE
+values(002, '공지 2', '우앙', '2019-08-27','와ㄷㅈㄷㅈㄷㅈㄲㄸㄱ러러러ㅓ말');
+insert into LESSON_NOTICE
+values(003, '공지 3', '우앙', '2019-08-27','와아2323232ㄲㄸㄱ러러러ㅓ말');

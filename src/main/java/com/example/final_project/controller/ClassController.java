@@ -33,7 +33,10 @@ public class ClassController {
 		} else if ("notice".equals(action)) {
             resultMap = service.getList(paramMap);
             action = "notice";
-		} else if ("introduction".equals(action)) {
+		}else if("notice_detail".equals(action)){
+			resultMap = service.getObject(paramMap);
+			action = "notice_detail";
+		}else if ("introduction".equals(action)) {
 
 		} else if ("homework".equals(action)) {
 			resultMap = service.saveObject(paramMap);
