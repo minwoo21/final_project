@@ -26,16 +26,20 @@ public class LoginController {
             viewName = "/home";
             modelandView.addObject("login", "login");
         } else {
-            String username = (String) paramMap.get("username");
-            String password = (String) paramMap.get("password");
-            if (username != null && password != null) {
-                viewName = "/home";
-                modelandView.addObject("login", "login");
-            } else {
+            if (paramMap.size() == 0) {
                 viewName = "/login";
+            } else {
+                String username = (String) paramMap.get("username");
+                String password = (String) paramMap.get("password");
+                if (username == "" && password == "") {
+                    viewName = "/login";
+                    modelandView.addObject("login", "login");
+                } else {
+                    
+                }
             }
-            modelandView.setViewName(viewName);
         }
+        modelandView.setViewName(viewName);
         Map<String, Object> resultMap = new HashMap<String, Object>();
         return modelandView;
     }
