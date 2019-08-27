@@ -21,7 +21,12 @@ public class HomeController {
     public void test() {
     }
 
-    @RequestMapping(value = { "/lessons"})
-    public void lessons() {        
+    //강의신청, 내강의
+    @RequestMapping(value = { "/enrolment"})
+    public void enrolment() {        
+    }
+
+    @RequestMapping(value = { "/mylesson"})
+    public void mylesson() {        
     }
 }
