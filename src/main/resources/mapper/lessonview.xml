@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="lessonview">
+	<select id="list" resultType="Map" parameterType="Map" timeout="10">
+		select 
+			LESSON			
+			, LESSON_NUM			
+			, TYPE			
+			, LESSON_NAME			
+			, LESSON_PRO
+			, LESSON_TIME
+			, LESSON_PLACTE
+			, LESSON_LIMIT			
+		from LESSON
+		<where>
+			<if test="COMMON_CODE_ID != null">
+			        and PARENT_LESSON = #{PARENT_LESSON}
+			</if>
+		</where>
+	</select>
+
+	<select id="read" resultType="Map" parameterType="Map">
+		select 
+			LESSON			
+			, LESSON_NUM			
+			, TYPE			
+			, LESSON_NAME			
+			, LESSON_PRO
+			, LESSON_TIME
+			, LESSON_PLACTE
+			, LESSON_LIMIT
+		from LESSON
+		where LESSON = #{LESSON}
+	</select>
+
+	<insert id="update" parameterType="Map">
+	    update LESSON
+		set LESSON_NUM = #{LESSON_NUM} 			
+			, TYPE = #{TYPE} 			
+			, LESSON_NAME = #{LESSON_NAME} 			
+			, LESSON_PRO = #{LESSON_PRO}
+			, LESSON_TIME = #{LESSON_TIME}
+			, LESSON_PLACE = #{LESSON_PLACE}
+			, LESSON_LIMIT = #{LESSON_LIMIT} 			
+		where LESSON = #{LESSON}
+	</insert>
+
+	<insert id="insert" parameterType="Map">
+	    INSERT INTO LESSON (
+			LESSON_NUM			
+			, TYPE			
+			, LESSON_NAME			
+			, LESSON_PRO
+			, LESSON_TIME
+			, LESSON_PLACTE
+			, LESSON_LIMIT
+		)
+		values(
+			#{LESSON_NUM}			
+			, #{TYPE}			
+			, #{LESSON_NAME}			
+			, #{LESSON_PRO}			
+			, #{LESSON_TIME}
+			, #{LESSON_PLACE}
+			, #{LESSON_LIMIT}			
+		)
+	</insert>
+
+	<delete id="delete" parameterType="Map">
+		delete from LESSON
+		where LESSON = #{LESSON}
+	</delete>
+</mapper>
