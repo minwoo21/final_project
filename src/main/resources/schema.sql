@@ -6,19 +6,44 @@ create table student
    primary key(id)
 );
 
--- 그룹/조직/부서 구조도
-CREATE TABLE CIP_ORGANIZATION
+-- MEMBER Table Create SQL
+CREATE TABLE MEMBER
 (
-	-- 조직 일련번호
-	ORGANIZATION_SEQ varchar(50) NOT NULL COMMENT '조직 일련번호',
-	-- 명칭
-	NAME varchar(1000) NOT NULL COMMENT '명칭',
-	-- 대표 전화번호
-	TELEPHONE varchar(40) COMMENT '대표 전화번호',
-	-- 정렬순서
-	ORDER_NUMBER decimal COMMENT '정렬순서',
-	-- 상위 조직 일련번호
-	PARENT_ORGANIZATION_SEQ varchar(50) COMMENT '상위 조직 일련번호',
-	CONSTRAINT PK_ORGANIZATION PRIMARY KEY (ORGANIZATION_SEQ)
-) COMMENT = '그룹/조직/부서 구조도';
+    `MEMBER_ID`          INTEGER        NOT NULL    AUTO_INCREMENT COMMENT '회원번호', 
+    `USERNAME`           VARCHAR(45)    NOT NULL    COMMENT '회원아이디', 
+    `PASSWORD`           VARCHAR(45)    NOT NULL    COMMENT '패스워드', 
+    `NAME`               VARCHAR(45)    NOT NULL    COMMENT '회원이름', 
+    `MEMBERTYPE`         VARCHAR(45)    NOT NULL    COMMENT '회원구분', 
+    `EMAIL`              VARCHAR(45)    NOT NULL    COMMENT '이메일', 
+    `PHONE`              VARCHAR(45)    NULL        COMMENT '전화번호', 
+    `ADDRESS_ZIPCODE`    VARCHAR(45)    NULL        COMMENT '우편번호', 
+    `ADDRESS_ROAD`       VARCHAR(45)    NULL        COMMENT '도로명주소', 
+    `ADDRESS_LAND`       VARCHAR(45)    NULL        COMMENT '지번주소', 
+    `ADDRESS_DETAIL`     VARCHAR(45)    NULL        COMMENT '상세주소', 
+    `ADDRESS_SUBDETAIL`  VARCHAR(45)    NULL        COMMENT '주소추가정보', 
+    PRIMARY KEY (MEMBER_ID)
+);
 
+-- LESSON Table Create SQL
+CREATE TABLE LESSON
+(
+    `LESSON_NUM`    INTEGER        NOT NULL    COMMENT '강의번호', 
+    `TYPE`          VARCHAR(45)    NOT NULL    COMMENT '구분', 
+    `LESSON_NAME`   VARCHAR(45)    NOT NULL    COMMENT '강의명', 
+    `LESSON_PRO`    VARCHAR(45)    NOT NULL    COMMENT '강사명', 
+    `LESSON_TIME`   VARCHAR(45)    NULL        COMMENT '강의시간', 
+    `LESSON_PLACE`  VARCHAR(45)    NULL        COMMENT '강의장소', 
+    `LESSON_LIMIT`  INTEGER        NOT NULL    COMMENT '제한인원', 
+    PRIMARY KEY (LESSON_NUM)
+);
+
+
+
+-- LESSON Table Create SQL
+CREATE TABLE LESSON_MEMBER
+(
+    `LIST_NUM`    INTEGER    NOT NULL    COMMENT '명단번호', 
+    `MEMBER_NUM`  INTEGER    NOT NULL    COMMENT '회원번호', 
+    `LESSON_NUM`  INTEGER    NOT NULL    COMMENT '강의번호', 
+    PRIMARY KEY (LIST_NUM)
+);
