@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class ClassController {
 
-    private final static String MAPPING = "class/";
+    private final static String MAPPING = "/class/";
 
     @Autowired
     private ClassService service;
@@ -33,16 +33,12 @@ public class ClassController {
 		} else if ("notice".equals(action)) {
             resultMap = service.getList(paramMap);
             action = "notice";
-		} else if ("update".equals(action)) {
-			resultMap = service.updateObject(paramMap);
-			action = "read";
 		} else if ("introduction".equals(action)) {
-			resultMap = service.saveObject(paramMap);
-			action = "read";
+
 		} else if ("homework".equals(action)) {
 			resultMap = service.saveObject(paramMap);
-			action = "read";
-		} 
+			action = "homework";
+		}
 
 		String viewName = MAPPING + action;
 
