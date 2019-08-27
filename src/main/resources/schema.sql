@@ -1,11 +1,3 @@
-create table student
-(
-   id integer not null,
-   name varchar(255) not null,
-   passport_number varchar(255) not null,
-   primary key(id)
-);
-
 -- MEMBER Table Create SQL
 CREATE TABLE MEMBER
 (
@@ -47,3 +39,15 @@ CREATE TABLE LESSON_MEMBER
     `LESSON_NUM`  INTEGER    NOT NULL    COMMENT '강의번호', 
     PRIMARY KEY (LIST_NUM)
 );
+
+
+CREATE TABLE LESSON_NOTICE
+(
+    `NUM`    INTEGER        NOT NULL AUTO_INCREMENT COMMENT '게시물번호',
+    `TITLE`   VARCHAR(45)    NOT NULL    COMMENT '제목',
+    `NAME`    VARCHAR(45)    NOT NULL    COMMENT '강사명',
+    `DATE`   VARCHAR(45)    NOT NULL    COMMENT '시간',
+    `CONTENT`   VARCHAR(2000)    NOT NULL    COMMENT '내용',
+    PRIMARY KEY (NUM)
+);
+

@@ -1,25 +1,31 @@
 <div xmlns:th="http://www.thymeleaf.org" layout:decorator="layout/defaultLayout">
-    <th:block layout:fragment="layout.content">
+    <th:block layout:fragment="body">
         <div class="container py-5">
                 <h3>공지사항</h3>
                 <div class="dropdown-divider"></div>
-                <table class="table">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <!-- <th scope="col">Handle</th> -->
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr th:each="resultData: ${resultMap.resultList}">
-                            <td th:text=${resultData.id}>ORGANIZATION_SEQ</th>
-                            <td th:text=${resultData.name}>ORGANIZATION_SEQ</th>
-                            <td th:text=${resultData.passport_number}>ORGANIZATION_SEQ</th>
-                        </tr>
-                    </tbody>
-                </table>
+                <form>
+                    <table class="table text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col">#</th>
+                                <th scope="col">title</th>
+                                <th scope="col">name</th>
+                                <th scope="col">DATE</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="resultData: ${resultMap.resultList}">
+                                <td th:text=${resultData.NUM}></th>
+                                <td>
+                                    <button type="submit" name="NUM" class="bg-white border-0 w-100 m-0" formaction="/class/notice_detail" formmethod="POST" th:value="${resultData.NUM}" th:text=${resultData.TITLE}></button>
+                                </th>
+                                <td th:text=${resultData.NAME}></th>
+                                <td th:text=${resultData.DATE}></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+                
                 <div class="input-group mb-3 col-4">
                     <div class="input-group-prepend">
                         <span class="input-group-text"><i class="fas fa-search"></i></span>
