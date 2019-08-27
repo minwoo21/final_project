@@ -50,6 +50,6 @@ public class ClassController {
 
 		modelandView.addObject("paramMap", paramMap);
 		modelandView.addObject("resultMap", resultMap);
-\		return modelandView;
+		return modelandView;
 	}
 }
