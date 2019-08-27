@@ -1,0 +1,85 @@
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="layout/defaultLayout">
+    <th:block layout:fragment="layout.content">
+    <th:block layout:fragment="layout.search_enrolment"></th:block>
+
+    <div class="container pt-3 ">
+        <h1>내 강의실</h1>
+        <table class="table">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">No.</th>
+                    <th scope="col">구분</th>
+                    <th scope="col">학년</th>
+                    <th scope="col">강의명</th>
+                    <th scope="col">학점</th>
+                    <th scope="col">담당교수</th>
+                    <th scope="col">강의시간/강의실</th>
+                    <th scope="col">신청/제한인원</th>
+                </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <th scope="row">1</th>
+                <td>전공</td>
+                <td>2</td>
+                <td>JAVA</td>
+                <td>4</td>
+                <td>...</td>
+                <td>(화요일 2,3,4 / 210404)</td>
+                <td>(36/50)</td>
+            </tr>
+            <tr>
+                <th scope="row">2</th>
+                <td>전공</td>
+                <td>2</td>
+                <td>C</td>
+                <td>4</td>
+                <td>...</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">3</th>
+                <td>전공</td>
+                <td>2</td>
+                <td>Android</td>
+                <td>3</td>
+                <td>...</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">4</th>
+                <td>교양</td>
+                <td>2</td>
+                <td>생활체육</td>
+                <td>2</td>
+                <td>...</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">5</th>
+                <td>교양</td>
+                <td>2</td>
+                <td>영어회화</td>
+                <td>2</td>
+                <td>...</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+            </tr>
+            <tr>
+                <th scope="row">6</th>
+                <td>전공</td>
+                <td>2</td>
+                <td>데이터베이스 개론</td>
+                <td>2</td>
+                <td>...</td>
+                <td>@mdo</td>
+                <td>@mdo</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    </th:block>
+</html>
