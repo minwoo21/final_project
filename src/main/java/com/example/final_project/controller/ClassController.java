@@ -16,7 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 @Controller
 public class ClassController {
 
-    private final static String MAPPING = "class/";
+    private final static String MAPPING = "/class/";
 
     @Autowired
     private ClassService service;
@@ -50,6 +50,6 @@ public class ClassController {
 
 		modelandView.addObject("paramMap", paramMap);
 		modelandView.addObject("resultMap", resultMap);
-\		return modelandView;
+		return modelandView;
 	}
 }

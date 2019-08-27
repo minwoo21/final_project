@@ -13,11 +13,11 @@
                         </tr>
                     </thead>
                     <tbody>
-                            <tr th:each="resultData: ${resultMap.resultList}">
-                                <td th:text=${resultData.id}>ORGANIZATION_SEQ</th>
-                                <td th:text=${resultData.name}>ORGANIZATION_SEQ</th>
-                                <td th:text=${resultData.passport_number}>ORGANIZATION_SEQ</th>
-                            </tr>
+                        <tr th:each="resultData: ${resultMap.resultList}">
+                            <td th:text=${resultData.id}>ORGANIZATION_SEQ</th>
+                            <td th:text=${resultData.name}>ORGANIZATION_SEQ</th>
+                            <td th:text=${resultData.passport_number}>ORGANIZATION_SEQ</th>
+                        </tr>
                     </tbody>
                 </table>
                 <div class="input-group mb-3 col-4">
