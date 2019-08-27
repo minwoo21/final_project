@@ -1,12 +1,50 @@
-<div xmlns:th="http://www.thymeleaf.org" layout:decorator="layout/defaultLayout">
-    <th:block layout:fragment="layout.content">
-        <h1>Page Content</h1>
-    </th:block>
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <!-- 공통 css, js, meta tag -->
+    <th:block th:replace="fragments/commonHead"></th:block>
+    <script>
+        function w3_open() {
+            document.getElementById("main").style.marginLeft = "15%";
+            document.getElementById("mySidebar").style.width = "15%";
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("openNav").setAttribute('onclick', 'w3_close()');
+        }
+        function w3_close() {
+            document.getElementById("main").style.marginLeft = "0%";
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("openNav").style.display = "inline-block";
+            document.getElementById("openNav").setAttribute('onclick', 'w3_open()');
+        }
+    </script>
+</head>
+<body>
+        <div class="w3-bar bg-primary">
+            <button id="openNav" class="w3-bar-item w3-button bg-primary w3-xlarge " onclick="w3_open()">&#9776;</button>
+            <a href="#" class="w3-bar-item w3-button w3-xlarge ">내강의</a>
+            <a href="#" class="w3-bar-item w3-button w3-xlarge ">강의신청</a>
+            <a href="#" class="w3-bar-item w3-button w3-xlarge ">내 할 일</a>
+        </div>
+            
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left" style="display:none" id="mySidebar">
+        <a href="#" class="w3-bar-item w3-button">Link 1</a>
+        <a href="#" class="w3-bar-item w3-button">Link 2</a>
+        <a href="#" class="w3-bar-item w3-button">Link 3</a>
+    </div>
+      
+    <div id="main">
+      
+        
+        <h2>기본 레이아웃</h2>
+        <!-- page content body 구성 -->
+        <th:block layout:fragment="layout.content"></th:block>
+      
+      </div>
+      
+      
+            
+    <!-- 공통 footer -->
+    <th:block th:replace="fragments/commonFooter :: commonFooter01"></th:block>
 
-    <!-- <th:block layout:fragment="pageCustomScript">
-    <script th:src="@{/js/jquery.min.js}"></script>
-</th:block>    
-<th:block layout:fragment="pageCustomCss">
-    <script th:src="@{/css/jquery.min.css}"></script>
-</th:block>     -->
-</div>
+</body>
+</html>
