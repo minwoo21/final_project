@@ -1,0 +1,35 @@
+
+<!--상단 내비게이션-->
+<nav th:fragment="lessons_navbar" class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">LOGO</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggler"
+        aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-between" id="navbarToggler">
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+            </li>
+            <li class="nav-item">
+                <a href="/home/lecture" class="nav-link">강의</a>
+            </li>
+            <li class="nav-item">
+                <a href="/home/homework" class="nav-link">과제</a>
+            </li>
+        </ul>
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
+            <li class="nav-item">
+                <a href="/home/mypage" class="nav-link">(구현필요)마이페이지</a>
+            </li>
+            <li class="nav-item">
+                <a href="/home/customer" class="nav-link">(구현필요)고객지원</a>
+            </li>
+            <form class="form-inline my-2 my-lg-0">
+                <th:block th:replace="fragments/lessons/select_lessons"></th:block>
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+            </form>
+        </ul>
+    </div>
+
+</nav>

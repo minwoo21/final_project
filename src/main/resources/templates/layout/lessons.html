@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <!-- 공통 css, js, meta tag -->
+    <th:block th:replace="fragments/commonHead"></th:block>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+    integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+</head>
+<body>
+    <!-- 공통 header 변형 -->
+    <th:block th:replace="fragments/lessons/header_lessons"></th:block>
+    <!--table_lessons-->
+    <th:block th:replace="fragments/lessons/table_lessons"></th:block> 
+    <!-- 공통 footer -->
+    <th:block th:replace="fragments/footer"></th:block>
+</body>
+</html>

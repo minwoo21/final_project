@@ -20,4 +20,8 @@ public class HomeController {
     @RequestMapping(value = { "/signup", "/layout/*" })
     public void test() {
     }
+
+    @RequestMapping(value = { "/lessons"})
+    public void lessons() {        
+    }
 }

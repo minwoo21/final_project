@@ -3,12 +3,61 @@
 <head>
     <!-- 공통 css, js, meta tag -->
     <th:block th:replace="fragments/commonHead"></th:block>
+    <script>
+        function w3_open() {
+            document.getElementById("main").style.marginLeft = "15%";
+            document.getElementById("mySidebar").style.width = "15%";
+            document.getElementById("mySidebar").style.display = "block";
+            document.getElementById("openNav").setAttribute('onclick', 'w3_close()');
+        }
+        function w3_close() {
+            document.getElementById("main").style.marginLeft = "0%";
+            document.getElementById("mySidebar").style.display = "none";
+            document.getElementById("openNav").style.display = "inline-block";
+            document.getElementById("openNav").setAttribute('onclick', 'w3_open()');
+        }
+    </script>
 </head>
 <body>
-    <h2>기본 레이아웃</h2>
-    <!-- page content body 구성 -->
-    <th:block layout:fragment="layout.content"></th:block>
-    <!-- 공통 footer -->
-    <th:block th:replace="fragments/commonFooter :: commonFooter01"></th:block>
+    <!-- navbar  -->
+    <div class="w3-bar bg-primary pr-4 w3-text-white">
+        <button id="openNav" class="w3-bar-item w3-button bg-primary w3-xlarge " onclick="w3_open()">&#9776;</button>
+        <form method="POST">
+            <input type="hidden" value="">
+            <div class="w3-left row">
+                    <button class="w3-bar-item w3-button w3-xlarge " formaction="#" formmethod="POST">Home</button>
+                <button class="w3-bar-item w3-button w3-xlarge " formaction="#" formmethod="POST">내강의</button>
+                <button class="w3-bar-item w3-button w3-xlarge " formaction="#" formmethod="POST">강의신청</button>
+                <button class="w3-bar-item w3-button w3-xlarge " formaction="#" formmethod="POST">내 할일</button>
+            </div>
+            <div class="w3-right row">
+                <button class="w3-bar-item w3-button w3-xlarge " formaction="#" formmethod="POST">내 정보</button>
+                <button class="w3-bar-item w3-button w3-xlarge " formaction="#" formmethod="POST">로그아웃</button>
+            </div>
+        </form>
+        
+    </div>
+    
+    <!-- sidebar -->
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-sand" style="display:none" id="mySidebar">
+        <a href="#" class="w3-bar-item w3-button">Link 1</a>
+        <a href="#" class="w3-bar-item w3-button">Link 2</a>
+        <a href="#" class="w3-bar-item w3-button">Link 3</a>
+    </div>
+      
+    <div id="main">
+      
+        
+       
+        <!-- page content body 구성 -->
+        <th:block layout:fragment="layout.content"></th:block>
+        <!-- 공통 footer -->
+        <th:block th:replace="fragments/commonFooter :: commonFooter01"></th:block>
+    </div>
+      
+      
+            
+    
+
 </body>
 </html>
