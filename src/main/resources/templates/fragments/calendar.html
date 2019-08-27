@@ -1,13 +1,25 @@
-<link th:href="@{/css/fullcalendar.css}" rel='stylesheet' />
-<link th:href="@{/css/fullcalendar.print.css}" rel='stylesheet' media='print' />
-<link th:href="@{/css/calenderstyle.css}" rel='stylesheet' media='print' />
-<script th:src="@{/js/jquery-3.4.1.min.js}" type="text/javascript"></script>
-<script th:src="@{/js/jquery-ui.custom.min.js}" type="text/javascript"></script>
-<script th:src="@{/js/fullcalendar.js}" type="text/javascript"></script>
-<script th:src="@{/js/calenderex.js}" type="text/javascript"></script>
+<head th:fragment="calendarhead">
+    <link type="text/css" href="../static/css/custom.css" th:href="@{/css/custom.css}" rel="stylesheet" />
 
-    <th:block layout:fragment="calendar.body">
+    <link type="text/css" href="../static/css/fullcalendar.css" th:href="@{/css/fullcalendar.css}" rel="stylesheet" />
+
+    <link type="text/css" href="../static/css/fullcalendar.print.css" th:href="@{/css/fullcalendar.print.css}"
+        rel="stylesheet" />
+
+    <link type="text/css" href="../static/css/calenderstyle.css" th:href="@{/css/calenderstyle.css}" rel="stylesheet" />
+
+    <script type="text/javascript" src="../static/js/fullcalendar.js" th:src="@{/js/fullcalendar.js}"></script>
+
+    <script type="text/javascript" src="../static/js/jquery-ui.custom.min.js"
+        th:src="@{/js/jquery-ui.custom.min.js}"></script>
+
+    <script type="text/javascript" src="../static/js/calenderex.js" th:src="@{/js/calenderex.js}"></script>
+</head>
+
+<div th:fragment="calendarbody">
+    <div id="calendarbody">
         <div id='wrap'>
-
-		<div id='calendar'></div>
-    </th:block>
+            <div id='calendar'></div>
+        </div>
+    </div>
+</div>
