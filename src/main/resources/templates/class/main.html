@@ -1,20 +1,31 @@
 <div xmlns:th="http://www.thymeleaf.org" layout:decorator="layout/defaultLayout">
-    <th:block layout:fragment="layout.content">
+    <th:block layout:fragment="body">
         <div class="container py-5">
             <!-- 프로그래스바 진행률 -->
             <div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">강의명</h5>
+                                <h6 class="card-subtitle mb-2">${resultMap.LESSON_NAME}</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">교수명</h5>
+                                <h6 class="card-subtitle mb-2">${resultMap.LESSON_PRO}</h6>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="py-3">
                     <h3>진행률</h3>
                     <div class="dropdown-divider"></div>
                     <div class="w3-section w3-light-grey">
                         <div class="w3-container w3-green w3-padding w3-center" style="width:25%">25%</div>
-                    </div>
-                </div>
-                <div  class="py-3">
-                    <h3>과제 진행률</h3>
-                    <div class="dropdown-divider"></div>
-                    <div class="w3-section w3-light-grey">
-                        <div class="w3-container w3-green w3-padding w3-center" style="width:50%">50%</div>
                     </div>
                 </div>
             </div>

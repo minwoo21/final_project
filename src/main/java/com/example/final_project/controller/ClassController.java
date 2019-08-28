@@ -4,6 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.example.final_project.service.ClassService;
+import com.example.final_project.service.HwService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -19,7 +20,9 @@ public class ClassController {
     private final static String MAPPING = "/class/";
 
     @Autowired
-    private ClassService service;
+	private ClassService service;
+	@Autowired
+    private HwService service2;
     
     @RequestMapping(value = MAPPING+"{action}", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView actionMethod(@RequestParam Map<String, Object> paramMap, @PathVariable String action,
@@ -39,8 +42,14 @@ public class ClassController {
 		}else if ("introduction".equals(action)) {
 
 		} else if ("homework".equals(action)) {
-			resultMap = service.saveObject(paramMap);
+			resultMap = service2.getList(paramMap);
 			action = "homework";
+		}else if ("make".equals(action)) {
+			resultMap = service2.saveObject(paramMap);
+			action = "homework";
+		}else if ("hwdetail".equals(action)) {
+			resultMap = service2.getObject(paramMap);
+			action = "hwdetail";
 		}
 
 		String viewName = MAPPING + action;

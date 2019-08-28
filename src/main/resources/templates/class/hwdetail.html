@@ -1,0 +1,22 @@
+<div xmlns:th="http://www.thymeleaf.org" layout:decorator="layout/defaultLayout">
+    <th:block layout:fragment="body">
+            <div class="container py-5">
+                <h3>내용</h3>
+                <div class="dropdown-divider"></div>
+                <div class="pb-5">
+                    과제명: <input type="text" th:value=${resultMap.LESSON_NUM}>
+                    작성자: <input type="text" th:value=${resultMap.HW_NAME}>
+                    날짜 : <input type="text" th:value=${resultMap.DATE}>
+                </div>
+                <P th:text=${resultMap.CONTENT}></P>
+                <form>
+                    <h3>과제 제출</h3>
+                    <div class="dropdown-divider"></div>
+                    <div>
+                        <textarea cols="100" rows="8" name="CONTENT"></textarea>
+                        <button type="submit" formaction="/class/make" formmethod="POST">제출</button>
+                    </div>
+                </form>
+            </div>
+    </th:block>
+</div>

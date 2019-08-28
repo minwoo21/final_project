@@ -1,19 +1,20 @@
 <div xmlns:th="http://www.thymeleaf.org" layout:decorator="layout/defaultLayout">
-    <th:block layout:fragment="layout.content">
+    <th:block layout:fragment="body">
             <div class="container py-5">
                 <h3>과제</h3>
                 <div class="dropdown-divider"></div>
                 <div>
                     <form>
                         <div class="pb-5">
-                            과제명: <input type="text" value="제목">
-                            작성자: <input type="text" value="이름">
-                            날짜 : <input type="date" value="시간">
+                            과제명: <input type="text" name="HW_NAME">
+                            작성자: <input type="text" name="LESSON_NUM">
+                            날짜 : <input type="date" name="DATE">
                         </div>
-                        <textarea name="content" cols="100" rows="8"></textarea>
+                        
+                        <textarea cols="100" rows="8" name="CONTENT"></textarea>
                         <div>
-                            <button type="submit">submit</button>
-                            <button type="button">cancel</button>
+                            <button type="submit" formaction="/class/hw_submit">submit</button>
+                            <button type="submit" formaction="/class/make" formmethod="POST">cancel</button>
                         </div>
                     </form>
                     
