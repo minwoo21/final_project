@@ -29,8 +29,12 @@ public class LoginService {
         Map<String, String> dataMap = new HashMap<String, String>();
         dataMap.put("USERNAME", username);
         dataMap.put("PASSWORD", password);
-        Object result = dao.getObject(sqlMapId, dataMap);
-        return result;
+        return dao.getObject(sqlMapId, dataMap);
+    }
+
+    public Object doSignup(Map<String, Object> dataMap) {
+        String sqlMapId = "member.signup";
+        return dao.saveObject(sqlMapId, dataMap);
     }
 
     public ModelAndView checkLogin(Map<String, Object> paramMap, String viewName) {

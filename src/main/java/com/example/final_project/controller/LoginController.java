@@ -20,29 +20,34 @@ public class LoginController {
 
     @RequestMapping(value = "/", method = { RequestMethod.GET, RequestMethod.POST })
     public ModelAndView actionMethod(@RequestParam Map<String, Object> paramMap, ModelAndView modelandView) {
-        String viewName = "home";
-        modelandView = service.checkLogin(paramMap, viewName);
-            if (paramMap.size() == 0) {
+        String loginID = (String) paramMap.get("loginid");
+        String login = (String) paramMap.get("login");
+        String viewName = new String();
+        if (loginID != null) {
+            viewName = "home";
+            modelandView.addObject("login", "login");
+        } else if (login == null) {
+            viewName = "login";
+        } else if (login.equals("try") == true) {
+            String username = (String) paramMap.get("username");
+            String password = (String) paramMap.get("password");
+            loginID = (String) service.doLogin(username, password);
+            if (loginID.equals(null)) {
+                modelandView.addObject("login", "error");
                 viewName = "login";
             } else {
-                String username = (String) paramMap.get("username");
-                String password = (String) paramMap.get("password");
-                if (username == "" && password == "") {
-                    viewName = "login";
-                    modelandView.addObject("login", "login");
-                } else {
-                    Object loginID = service.doLogin(username, password);
-                    if (loginID == null) {
-                        viewName = "login";
-                        modelandView.addObject("login", "error");
-                    } else {
-                        viewName = "home";
-                        modelandView.addObject("login", "login");
-                    }
-                }
+                modelandView.addObject("loginid", loginID);
+                viewName = "home";
             }
+        } else if (login.equals("signup")) {
+            Object demo = service.doSignup(paramMap);
+            modelandView.addObject("login", "signupsuccess");
+            viewName = "login";
+        } else {
+            viewName = "login";
         }
         modelandView.setViewName(viewName);
+
         Map<String, Object> resultMap = new HashMap<String, Object>();
         return modelandView;
     }

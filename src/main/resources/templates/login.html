@@ -1,48 +1,49 @@
 <!DOCTYPE html>
 <html xmlns="https://www.thymeleaf.org/" layout:decorator="layout/login">
-    <!-- 카드 헤더 -->
-    <th:block layout:fragment="card.header">로그인</th:block>
-    <!-- 카드 내용 -->
-    <th:block layout:fragment="card.body">
-        <!-- 폼 시작 -->
-        <form action="/" name="login" method="POST">
-            <!-- 상단 알림 (조건부 작동) -->
-            <div th:if="${login}==signupsuccess" class="alert alert-primary" role="alert">
-                회원 가입이 완료되었습니다.
-            </div>
-            <div th:if="${login}==error" class="alert alert-danger" role="alert">
-                로그인에 실패했습니다. 아이디와 패스워드를 확인해 주세요.
-            </div>
-            <!-- 아이디 -->
-            <div class="form-group">
-                <label for="username" class="font-weight-bold">아이디</label>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><span class="fas fa-user"></span></span>
-                    </div>
-                    <input type="text" class="form-control" placeholder="아이디" name="username" id="username">
+<!-- 카드 헤더 -->
+<th:block layout:fragment="card.header">로그인</th:block>
+<!-- 카드 내용 -->
+<th:block layout:fragment="card.body">
+    <!-- 폼 시작 -->
+    <form action="/" name="login" method="POST">
+        <input type="hidden" name="login" value="try">
+        <!-- 상단 알림 (조건부 작동) -->
+        <div th:if="${login}==signupsuccess" class="alert alert-primary" role="alert">
+            회원 가입이 완료되었습니다.
+        </div>
+        <div th:if="${login}==error" class="alert alert-danger" role="alert">
+            로그인에 실패했습니다. 아이디와 패스워드를 확인해 주세요.
+        </div>
+        <!-- 아이디 -->
+        <div class="form-group">
+            <label for="username" class="font-weight-bold">아이디</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><span class="fas fa-user"></span></span>
                 </div>
+                <input type="text" class="form-control" placeholder="아이디" name="username" id="username" required>
             </div>
-            <!-- 패스워드 -->
-            <div class="form-group">
-                <label for="pwd" class="font-weight-bold">패스워드</label>
-                <div class="input-group">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><span class="fas fa-lock"></span></span>
-                    </div>
-                    <input type="password" class="form-control" placeholder="패스워드" name="password" id="password">
+        </div>
+        <!-- 패스워드 -->
+        <div class="form-group">
+            <label for="pwd" class="font-weight-bold">패스워드</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text"><span class="fas fa-lock"></span></span>
                 </div>
+                <input type="password" class="form-control" placeholder="패스워드" name="password" id="password" required>
             </div>
-            <!-- 하단 버튼 -->
-            <div class="text-center m-2">
-                <a href="/signup" class="font-weight-bold m-2">회원가입</a>
-                <a href="#" class="font-weight-bold m-2">패스워드 찾기</a>
-            </div>
-            <button type="submit" class="col-12 btn btn-primary">
-                <span class="fas fa-unlock"></span>
-                로그인
-            </button>
-        </form>
-    </th:block>
+        </div>
+        <!-- 하단 버튼 -->
+        <div class="text-center m-2">
+            <a href="/signup" class="font-weight-bold m-2">회원가입</a>
+            <a href="#" class="font-weight-bold m-2">패스워드 찾기</a>
+        </div>
+        <button type="submit" class="col-12 btn btn-primary">
+            <span class="fas fa-unlock"></span>
+            로그인
+        </button>
+    </form>
+</th:block>
 
 </html>
