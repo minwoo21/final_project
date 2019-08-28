@@ -3,6 +3,10 @@ package com.example.final_project.service;
 import java.util.HashMap;
 import java.util.Map;
 
+<<<<<<< HEAD
+=======
+import com.example.final_project.dao.lessondao;
+>>>>>>> 3011d44217dc4f62817779d83feab78ef45e4f1e
 import com.example.final_project.repository.lessonrepository;
 import com.example.final_project.util.CommonUtil;
 
@@ -16,7 +20,7 @@ public class lessonservice {
 	private lessonrepository repository;
 
 	@Autowired
-	private ShareDao dao;
+	private lessondao dao;
 
 	@Autowired
 	private CommonUtil commonUtil;
