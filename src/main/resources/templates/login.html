@@ -6,6 +6,13 @@
     <th:block layout:fragment="card.body">
         <!-- 폼 시작 -->
         <form action="/" name="login" method="POST">
+            <!-- 상단 알림 (조건부 작동) -->
+            <div th:if="${login}==signupsuccess" class="alert alert-primary" role="alert">
+                회원 가입이 완료되었습니다.
+            </div>
+            <div th:if="${login}==error" class="alert alert-danger" role="alert">
+                로그인에 실패했습니다. 아이디와 패스워드를 확인해 주세요.
+            </div>
             <!-- 아이디 -->
             <div class="form-group">
                 <label for="username" class="font-weight-bold">아이디</label>
