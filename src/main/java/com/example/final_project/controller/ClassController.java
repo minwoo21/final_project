@@ -39,7 +39,7 @@ public class ClassController {
 		}else if ("introduction".equals(action)) {
 
 		} else if ("homework".equals(action)) {
-			resultMap = service.saveObject(paramMap);
+			resultMap = service.getList(paramMap);
 			action = "homework";
 		}
 
