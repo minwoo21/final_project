@@ -10,20 +10,19 @@
                                 <th scope="col">#</th>
                                 <th scope="col">title</th>
                                 <th scope="col">DATE</th>
-                                <th scope="col">DATE</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr th:each="resultData: ${resultMap.resultList}">
-                                <td th:text=${resultData.NUM}></th>
+                                <td th:text=${resultData.LESSON_NUM}></th>
                                 <td>
-                                    <button type="submit" name="NUM" class="bg-white border-0 w-100 m-0" formaction="/class/notice_detail" formmethod="POST" th:value="${resultData.NUM}" th:text=${resultData.TITLE}></button>
+                                    <button type="submit" name="NUM" class="bg-white border-0 w-100 m-0" formaction="/class/hwdetail" formmethod="POST" th:value="${resultData.HW_NUM}" th:text=${resultData.HW_NAME}></button>
                                 </th>
-                                <td th:text=${resultData.NAME}></th>
                                 <td th:text=${resultData.DATE}></th>
                             </tr>
                         </tbody>
                     </table>
+                    <button type="submit" formaction="/class/hw_submit" formmethod="POST">과제 만들기</button>
                 </form>
             </div>
     </th:block>
