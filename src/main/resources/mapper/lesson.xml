@@ -21,11 +21,7 @@
 		FROM LESSON_MEMBER
 		INNER JOIN LESSON
 		ON LESSON_MEMBER.LESSON_NUM=LESSON.LESSON_NUM
-<<<<<<< HEAD
 		WHERE  LESSON_MEMBER.MEMBER_ID = #{loginid}; 
-=======
-		<!-- WHERE  LESSON_MEMBER.MEMBER_ID = #{MEMBER_ID}; -->
->>>>>>> f524269d80637168e25cb247e173f644872df01f
 	</select>
 
 	<update id="update" parameterType="Map">
