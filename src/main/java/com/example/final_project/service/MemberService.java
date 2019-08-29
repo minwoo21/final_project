@@ -61,4 +61,10 @@ public class MemberService {
         }
         return modelAndView;
     }
+
+    public Object getMemberInfo (Map<String, Object> paramMap) {
+        Map<String, Object> dataMap = new HashMap<String, Object>();
+        String sqlMapId = "member.info";
+        return dao.getObject(sqlMapId, dataMap);
+    }
 }
