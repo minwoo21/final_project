@@ -25,7 +25,12 @@
                     </div>
 
                     <div>
-                        <button type="button" class="btn btn-sm btn-primary" id="btnSave">뒤로가기</button>
+                        <form>
+                            <th:block th:replace="fragments/login"></th:block>
+                            <th:block th:replace="fragments/lesson"></th:block>
+                            <button type="submit" class="btn btn-sm btn-primary" formaction="/class/notice" formmethod="POST">뒤로가기</button>
+                        </form>
+                        
                     </div>
                     
                 </div>
