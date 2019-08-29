@@ -57,4 +57,9 @@ public class HomeController {
         Map<String, Object> resultMap = new HashMap<String, Object>();
         return modelandView;
     }
+
+    @RequestMapping(value = "/signup", method = { RequestMethod.GET, RequestMethod.POST })
+    public void byPass() {
+
+    }
 }
