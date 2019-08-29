@@ -15,10 +15,12 @@
     
                     <div class="mb-3">
                         <label for="content">내용</label>
-                        <textarea class="form-control" rows="5" name="content" id="content" th:value=${resultMap.CONTENT}></textarea>
+                        <textarea class="form-control" rows="5" name="content" id="content" th:text=${resultMap.CONTENT}></textarea>
                     </div>
     
                 <form>
+                    <th:block th:replace="fragments/login"></th:block>
+                    <th:block th:replace="fragments/lesson"></th:block>
                     <h3>과제 제출</h3>
                     <div class="dropdown-divider"></div>
                     <div class="input-group mb-3 d-flex justify-content-center">
