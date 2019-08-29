@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
 @Service
-public class LoginService {
+public class MemberService {
 
     @Autowired
     private MemberRepository repository;

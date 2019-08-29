@@ -5,7 +5,7 @@ import java.util.Map;
 
 import com.example.final_project.service.ClassService;
 import com.example.final_project.service.HwService;
-import com.example.final_project.service.LoginService;
+import com.example.final_project.service.MemberService;
 import com.example.final_project.service.lessonservice;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,7 +28,7 @@ public class ClassController {
 	@Autowired
     private lessonservice lesson;
 	@Autowired
-	private LoginService loginservice;
+	private MemberService memberservice;
 	
     @RequestMapping(value = MAPPING+"{action}", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView actionMethod(@RequestParam Map<String, Object> paramMap, @PathVariable String action,
@@ -63,7 +63,7 @@ public class ClassController {
 		}
 
 		String viewName = MAPPING + action;
-		modelandView = loginservice.checkLogin(paramMap, viewName);
+		modelandView = memberservice.checkLogin(paramMap, viewName);
 		modelandView.addObject("paramMap", paramMap);
 		modelandView.addObject("resultMap", resultMap);
 		return modelandView;
