@@ -63,8 +63,8 @@ public class MemberService {
     }
 
     public Map<String, Object> getMemberInfo(Map<String, Object> paramMap) {
-        Map<String, Object> dataMap = new HashMap<String, Object>();
+        String loginID = (String) paramMap.get("loginid");
         String sqlMapId = "member.info";
-        return (Map<String, Object>) dao.getObject(sqlMapId, dataMap);
+        return (Map<String, Object>) dao.getObject(sqlMapId, loginID);
     }
 }
