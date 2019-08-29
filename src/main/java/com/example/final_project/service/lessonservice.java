@@ -26,9 +26,9 @@ public class lessonservice {
 		String sqlMapId = "LESSON.list";
 
 		Object resultObject = new HashMap<>();
-		// ((Map<String, Object>) resultObject).put("resultList", dao.getList(sqlMapId,
-		// dataMap));
-		((Map<String, Object>) resultObject).put("resultList", repository.findAll());
+		 ((Map<String, Object>) resultObject).put("resultList", dao.getList(sqlMapId,
+		 dataMap));
+		
 
 		return resultObject;
 	}

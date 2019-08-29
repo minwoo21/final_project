@@ -41,6 +41,14 @@ values(004, 14674, 0009);
 insert into LESSON_MEMBER
 values(005, 14675, 0009);
 
+-- mylist
+insert into MY_LESSON
+values(001, 14671, 001, '수학1', '김땡땡');
+insert into MY_LESSON
+values(002, 14671, 002, '수학2', '나땡땡');
+
+
+
 
 insert into LESSON_NOTICE
 values(001, 0001, '공지 1', '우앙', '2019-08-27','와아앙앙 미쳤ㄲㄸㄱ러러러ㅓ말');
