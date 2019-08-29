@@ -3,6 +3,7 @@ package com.example.final_project.controller;
 import java.util.HashMap;
 import java.util.Map;
 
+import com.example.final_project.service.MemberService;
 import com.example.final_project.service.lessonservice;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,9 @@ public class lessoncontroller {
     private final static String MAPPING = "/lesson/";
 
     @Autowired
-    private lessonservice service;
+	private lessonservice service;
+	@Autowired
+	private MemberService memberservice;
     
     @RequestMapping(value = MAPPING+"{action}", method = { RequestMethod.GET, RequestMethod.POST })
 	public ModelAndView actionMethod(@RequestParam Map<String, Object> paramMap, @PathVariable String action,
@@ -34,12 +37,16 @@ public class lessoncontroller {
 		} else if ("mylesson".equals(action)) {
             resultMap = service.getList(paramMap);
             action = "mylesson";
-        } 
+		} else if ("myclass".equals(action)) {
+            resultMap = service.getlesson(paramMap);
+            action = "myclass";
+		} 
+	
+	
         
 		String viewName = MAPPING + action;
 
-		modelandView.setViewName(viewName);
-
+		modelandView = memberservice.checkLogin(paramMap, viewName);
 		modelandView.addObject("paramMap", paramMap);
 		modelandView.addObject("resultMap", resultMap);
 		return modelandView;

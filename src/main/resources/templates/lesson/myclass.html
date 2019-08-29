@@ -4,7 +4,7 @@
                 <h3>공지사항</h3>
                 <div class="dropdown-divider"></div>
                 <form>
-
+                    <th:block th:replace="fragments/login"></th:block>
                     <table class="table text-center">
                         <thead>
                             <tr>
@@ -15,12 +15,11 @@
                         </thead>
                         <tbody>
                             <tr th:each="resultData: ${resultMap.resultList}">
-                                <td th:text=${resultData.LESSON_NUM}></th>
+                                <td th:text=${resultData.MEMBER_ID}></th>
                                 <td>
-                                    <button type="submit" name="NUM" class="bg-white border-0 w-100 m-0" formaction="/class/notice_detail" formmethod="POST" th:value="${resultData.LESSON_NUM}" th:text=${resultData.LESSON_NUM}></button>
-                                </tD>
-                                <td th:text=${resultData.LESSON_NAME}></tD>
-                                <td th:text=${resultData.LESSON_PRO}></tD>
+                                    <button type="submit" name="NUM" class="bg-white border-0 w-100 m-0" formaction="/class/main" formmethod="POST" th:value="${resultData.LESSON_NUM}" th:text=${resultData.LESSON_NAME}></button>
+                                </td>
+                                <td th:text=${resultData.LESSON_PRO}></td>
                             </tr>
                         </tbody>
                     </table>

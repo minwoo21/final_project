@@ -42,7 +42,12 @@ public class lessonservice {
 	}
 
 	public Object getlesson(Object dataMap){
-		String sqlMapId=""
+		String sqlMapId="LESSON.mylesson";
+		
+		Object resultObject = new HashMap<>();
+		 ((Map<String, Object>) resultObject).put("resultList", dao.getmylesson(sqlMapId, dataMap));
+
+		return resultObject;
 	}
 
 	public Object saveObject(Map<String, Object> dataMap) {
