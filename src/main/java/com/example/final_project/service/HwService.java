@@ -4,7 +4,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 import com.example.final_project.dao.HwLDao;
-import com.example.final_project.repository.HwRepository;
 import com.example.final_project.util.CommonUtil;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,8 +12,6 @@ import org.springframework.stereotype.Service;
 @Service
 public class HwService {
 
-	@Autowired
-	private HwRepository repository;
 
 	@Autowired
 	private HwLDao dao;
@@ -26,7 +23,7 @@ public class HwService {
 		String sqlMapId = "homework.list";
 
 		Object resultObject = new HashMap<>();
-		((Map<String, Object>) resultObject).put("resultList", repository.findAll());
+		((Map<String, Object>) resultObject).put("resultList", dao.getList(sqlMapId,dataMap));
 
 		return resultObject;
 	}
