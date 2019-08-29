@@ -3,6 +3,8 @@
 <th:block layout:fragment="head">
     <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
     <script th:src="@{/js/signup.js}"></script>
+    <script th:src="@{/js/login.js}"></script>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
 </th:block>
 <!-- 로그인 카드 -->
 <th:block layout:fragment="card.header">회원가입</th:block>
@@ -18,7 +20,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><span class="fas fa-user"></span></span>
                     </div>
-                    <input type="text" class="form-control" placeholder="아이디" name="USERNAME" id="username" required>
+                    <input type="text" class="form-control ime-mode" placeholder="아이디" name="USERNAME" id="username" required>
                 </div>
                 <button class="btn btn-outline-primary mx-2" id="idcheck">중복확인</button>
             </div>

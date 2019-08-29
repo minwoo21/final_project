@@ -1,5 +1,9 @@
 <!DOCTYPE html>
 <html xmlns="https://www.thymeleaf.org/" layout:decorator="layout/login">
+<th:block layout:fragment="head">
+    <script th:src="@{/js/login.js}"></script>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
+</th:block>
 <!-- 카드 헤더 -->
 <th:block layout:fragment="card.header">로그인</th:block>
 <!-- 카드 내용 -->
@@ -24,7 +28,7 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text"><span class="fas fa-user"></span></span>
                 </div>
-                <input type="text" class="form-control" placeholder="아이디" name="username" id="username" required>
+                <input type="text" class="form-control ime-mode" placeholder="아이디" name="username" id="username" required>
             </div>
         </div>
         <!-- 패스워드 -->
