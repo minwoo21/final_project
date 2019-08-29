@@ -49,6 +49,9 @@ public class HomeController {
         } else {
             viewName = "login";
         }
+
+
+        
         modelandView.setViewName(viewName);
 
         Map<String, Object> resultMap = new HashMap<String, Object>();

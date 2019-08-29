@@ -13,11 +13,39 @@
 	<select id="read" resultType="Map" parameterType="Map">
 		select *
 		from LESSON
-		where LESSON_NUM = #{LESSON_NUM}
+		where LESSON_NUM = #{NUM}
+	</select>
+
+	<select id="mylesson" resultType="Map" parameterType="Map">
+		SELECT MEMBER_ID, LESSON_MEMBER.LESSON_NUM, LESSON_NAME,LESSON_PRO
+		FROM LESSON_MEMBER
+		INNER JOIN LESSON
+		ON LESSON_MEMBER.LESSON_NUM=LESSON.LESSON_NUM
+		<!-- WHERE  LESSON_MEMBER.MEMBER_ID = #{MEMBER_ID}; -->
 	</select>
 
 	<insert id="update" parameterType="Map">
-	    
+		insert into LESSON (
+			LESSON_NUM			
+			, TYPE			
+			, LESSON_NAME			
+			, LESSON_PRO
+			, LESSON_TIME
+			, LESSON_PLACTE
+			, LESSON_LIMIT
+			, LESSON_START
+			, LESSON_END
+			) VALUES (
+			#{LESSON_NUM}			
+			, #{TYPE}			
+			, #{LESSON_NAME}			
+			, #{LESSON_PRO}			
+			, #{LESSON_TIME}
+			, #{LESSON_PLACE}
+			, #{LESSON_LIMIT}
+			, #{LESSON_START}
+			, #{LESSON_END}	
+			)
 	</insert>
 
 	<insert id="insert" parameterType="Map">

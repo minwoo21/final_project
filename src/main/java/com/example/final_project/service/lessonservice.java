@@ -26,17 +26,25 @@ public class lessonservice {
 		String sqlMapId = "LESSON.list";
 
 		Object resultObject = new HashMap<>();
-		// ((Map<String, Object>) resultObject).put("resultList", dao.getList(sqlMapId,
-		// dataMap));
-		((Map<String, Object>) resultObject).put("resultList", repository.findAll());
+		 ((Map<String, Object>) resultObject).put("resultList", dao.getList(sqlMapId,dataMap));
+		
 
 		return resultObject;
 	}
 
 	public Object getObject(Object dataMap) {
 		String sqlMapId = "LESSON.read";
-
+		
 		Object resultObject = dao.getObject(sqlMapId, dataMap);
+
+		return resultObject;
+	}
+
+	public Object getlesson(Object dataMap){
+		String sqlMapId="LESSON.mylesson";
+		
+		Object resultObject = new HashMap<>();
+		 ((Map<String, Object>) resultObject).put("resultList", dao.getmylesson(sqlMapId, dataMap));
 
 		return resultObject;
 	}

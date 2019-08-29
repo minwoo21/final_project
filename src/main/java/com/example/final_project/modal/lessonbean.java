@@ -21,17 +21,21 @@ public class lessonbean implements Serializable{
     private String LESSON_PRO;
     private String LESSON_TIME;
     private String LESSON_PLACE;
-    private String LESSON_LIMIT;
+	private String LESSON_LIMIT;
+	private String LESSON_START;
+	private String LESSON_END;
 	
 
-	public lessonbean(Long LESSON_NUM, String TYPE, String LESSON_NAME, String LESSON_PRO, String LESSON_TIME, String LESSON_PLACE, String LESSON_LIMIT) {
+	public lessonbean(Long LESSON_NUM, String TYPE, String LESSON_NAME, String LESSON_PRO, String LESSON_TIME, String LESSON_PLACE, String LESSON_LIMIT, String LESSON_START, String LESSON_END) {
 		this.LESSON_NUM = LESSON_NUM;
 		this.TYPE = TYPE;
         this.LESSON_NAME = LESSON_NAME;
         this.LESSON_PRO = LESSON_PRO;
         this.LESSON_TIME = LESSON_TIME;
         this.LESSON_PLACE = LESSON_PLACE;
-        this.LESSON_LIMIT = LESSON_LIMIT;
+		this.LESSON_LIMIT = LESSON_LIMIT;
+		this.LESSON_START = LESSON_START;
+		this.LESSON_END = LESSON_END;
 	}
 
 	public Long getLESSON_NUM() {
@@ -88,6 +92,22 @@ public class lessonbean implements Serializable{
 
 	public void setLESSON_LIMIT(String LESSON_LIMIT) {
 		this.LESSON_LIMIT = LESSON_LIMIT;
+	}
+	
+	public String getLESSON_START() {
+		return this.LESSON_START;
+	}
+
+	public void setLESSON_START(String LESSON_START) {
+		this.LESSON_START = LESSON_START;
+	}
+	
+	public String getLESSON_END() {
+		return this.LESSON_END;
+	}
+
+	public void setLESSON_END(String LESSON_END) {
+		this.LESSON_END = LESSON_END;
     }
 
 	public lessonbean LESSON_NUM(Long LESSON_NUM) {
@@ -123,6 +143,16 @@ public class lessonbean implements Serializable{
     public lessonbean LESON_LIMIT(String LESSON_LIMIT) {
 		this.LESSON_LIMIT = LESSON_LIMIT;
 		return this;
+	}
+	
+	public lessonbean LESON_START(String LESSON_START) {
+		this.LESSON_START = LESSON_START;
+		return this;
+	}
+	
+	public lessonbean LESON_END(String LESSON_END) {
+		this.LESSON_END = LESSON_END;
+		return this;
     }
 
 	@Override
@@ -136,12 +166,13 @@ public class lessonbean implements Serializable{
 		return Objects.equals(LESSON_NUM, lessonbean.LESSON_NUM) && Objects.equals(TYPE, lessonbean.TYPE)
                 && Objects.equals(LESSON_NAME, lessonbean.LESSON_NAME) && Objects.equals(LESSON_PRO, lessonbean.LESSON_PRO)
                 && Objects.equals(LESSON_TIME, lessonbean.LESSON_TIME) && Objects.equals(LESSON_PLACE, lessonbean.LESSON_PLACE)
-                && Objects.equals(LESSON_LIMIT, lessonbean.LESSON_LIMIT);
+				&& Objects.equals(LESSON_LIMIT, lessonbean.LESSON_LIMIT) && Objects.equals(LESSON_START, lessonbean.LESSON_START)
+				&& Objects.equals(LESSON_END, lessonbean.LESSON_END);
 	}
 
 	@Override
 	public int hashCode() {
-		return Objects.hash(LESSON_NUM, TYPE, LESSON_NAME, LESSON_PRO, LESSON_TIME, LESSON_PLACE, LESSON_LIMIT);
+		return Objects.hash(LESSON_NUM, TYPE, LESSON_NAME, LESSON_PRO, LESSON_TIME, LESSON_PLACE, LESSON_LIMIT, LESSON_START, LESSON_END);
 	}
 
 	@Override
@@ -153,7 +184,9 @@ public class lessonbean implements Serializable{
             ", LESSON_PRO='" + getLESSON_PRO() + "'" +
             ", LESSON_TIME='" + getLESSON_TIME() + "'" +
             ", LESSON_PLACE='" + getLESSON_PLACE() + "'" +
-            ", LESSON_LIMIT='" + getLESSON_LIMIT() + "'" +
+			", LESSON_LIMIT='" + getLESSON_LIMIT() + "'" +
+			", LESSON_START='" + getLESSON_START() + "'" +
+			", LESSON_END='" + getLESSON_END() + "'" +
 			"}";
 	}
 

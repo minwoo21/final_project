@@ -14,7 +14,9 @@
 			, LESSON_PRO
 			, LESSON_TIME
 			, LESSON_PLACTE
-			, LESSON_LIMIT			
+			, LESSON_LIMIT
+			, LESSON_START
+			, LESSON_END			
 		from LESSON
 		<where>
 			<if test="COMMON_CODE_ID != null">
@@ -33,6 +35,8 @@
 			, LESSON_TIME
 			, LESSON_PLACTE
 			, LESSON_LIMIT
+			, LESSON_START
+			, LESSON_END
 		from LESSON
 		where LESSON = #{LESSON}
 	</select>
@@ -45,7 +49,9 @@
 			, LESSON_PRO = #{LESSON_PRO}
 			, LESSON_TIME = #{LESSON_TIME}
 			, LESSON_PLACE = #{LESSON_PLACE}
-			, LESSON_LIMIT = #{LESSON_LIMIT} 			
+			, LESSON_LIMIT = #{LESSON_LIMIT}
+			, LESSON_START = #{LESSON_START}
+			, LESSON_END = #{LESSON_END}
 		where LESSON = #{LESSON}
 	</insert>
 
@@ -58,6 +64,8 @@
 			, LESSON_TIME
 			, LESSON_PLACTE
 			, LESSON_LIMIT
+			, LESSON_START
+			, LESSON_END
 		)
 		values(
 			#{LESSON_NUM}			
@@ -66,7 +74,9 @@
 			, #{LESSON_PRO}			
 			, #{LESSON_TIME}
 			, #{LESSON_PLACE}
-			, #{LESSON_LIMIT}			
+			, #{LESSON_LIMIT}
+			, #{LESSON_START}
+			, #{LESSON_END}			
 		)
 	</insert>
 

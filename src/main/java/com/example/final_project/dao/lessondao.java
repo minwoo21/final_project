@@ -39,4 +39,9 @@ public class lessondao{
 		Integer resultObject = sqlSession.delete(sqlMapId,dataMap);
 		return resultObject;
 	}
+	public Object getmylesson(String sqlMapId, Object dataMap){
+		Object resultObject = sqlSession.selectList(sqlMapId, dataMap);
+
+		return resultObject;
+	}
 }
