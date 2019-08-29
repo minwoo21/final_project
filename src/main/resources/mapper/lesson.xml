@@ -21,7 +21,7 @@
 		FROM LESSON_MEMBER
 		INNER JOIN LESSON
 		ON LESSON_MEMBER.LESSON_NUM=LESSON.LESSON_NUM
-		<!-- WHERE  LESSON_MEMBER.MEMBER_ID = #{MEMBER_ID }; -->
+		WHERE  LESSON_MEMBER.MEMBER_ID = #{loginid}; 
 	</select>
 
 	<insert id="update" parameterType="Map">
