@@ -44,4 +44,10 @@ public class lessondao{
 
 		return resultObject;
 	}
+
+	public Object saveObject01(String sqlMapId, Object dataMap) {
+		Integer resultObject = sqlSession.insert(sqlMapId, dataMap);
+		
+		return resultObject;
+	}
 }

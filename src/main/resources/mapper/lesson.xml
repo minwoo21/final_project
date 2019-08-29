@@ -52,6 +52,18 @@
 			)	    
 	</insert>
 
+	<insert id="insert01" parameterType="Map">
+		insert into LESSON_MEMBER (
+			LIST_NUM
+			, MEMBER_ID
+			, LESSON_NUM
+		) values (
+			#{LIST_NUM}
+			, #{MEMBER_ID}
+			, #{LESSON_NUM}
+		)
+	 </insert>
+
 	<delete id="delete" parameterType="Map">
 		
 	</delete>

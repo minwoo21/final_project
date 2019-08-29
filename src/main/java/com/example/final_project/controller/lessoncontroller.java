@@ -31,8 +31,8 @@ public class lessoncontroller {
 		Object resultMap = new HashMap<String, Object>() ;
 
 		// divided depending on action value
-		if ("enrolment".equals(action) == true) {
-			if ("submit".equals(paramMap.get("makelesson")) == true) {
+		if ("enrolment".equals(action)) {
+			if ("submit".equals(paramMap.get("makelesson"))) {
 				resultMap = service.inputlesson(paramMap);
 			}
             resultMap = service.getList(paramMap);
@@ -43,7 +43,10 @@ public class lessoncontroller {
 		} else if ("makelesson".equals(action)) {
             action = "makelesson";
         } else if ("myclass".equals(action)) {
-            resultMap = service.getlesson(paramMap);
+			if ("submit".equals(paramMap.get("LESSON_NUM"))) {
+				resultMap = service.inputlesson01(paramMap);
+			}
+			resultMap = service.getlesson(paramMap);
             action = "myclass";
 		} 
 	
