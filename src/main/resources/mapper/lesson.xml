@@ -15,7 +15,27 @@
 	</select>
 
 	<insert id="update" parameterType="Map">
-	    
+		insert into LESSON (
+			LESSON_NUM			
+			, TYPE			
+			, LESSON_NAME			
+			, LESSON_PRO
+			, LESSON_TIME
+			, LESSON_PLACTE
+			, LESSON_LIMIT
+			, LESSON_START
+			, LESSON_END
+			) VALUES (
+			#{LESSON_NUM}			
+			, #{TYPE}			
+			, #{LESSON_NAME}			
+			, #{LESSON_PRO}			
+			, #{LESSON_TIME}
+			, #{LESSON_PLACE}
+			, #{LESSON_LIMIT}
+			, #{LESSON_START}
+			, #{LESSON_END}	
+			)
 	</insert>
 
 	<insert id="insert" parameterType="Map">

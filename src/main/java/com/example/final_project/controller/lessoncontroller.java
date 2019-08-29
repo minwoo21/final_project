@@ -28,13 +28,17 @@ public class lessoncontroller {
 		Object resultMap = new HashMap<String, Object>() ;
 
 		// divided depending on action value
-		if ("enrolment".equals(action)) {
-            resultMap = service.getObject(paramMap);
+		if ("enrolment_action".equals(action)) {
+            resultMap = service.getList(paramMap);
             action = "enrolment";
-		} else if ("mylesson".equals(action)) {
+		} else if ("mylesson_action".equals(action)) {
             resultMap = service.getList(paramMap);
             action = "mylesson";
+		} else if ("makelesson_action".equals(action)) {
+            resultMap = service.getObject(paramMap);
+            action = "makelesson";
         } 
+		 
         
 		String viewName = MAPPING + action;
 
