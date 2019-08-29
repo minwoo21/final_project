@@ -54,10 +54,4 @@ public class HomeController {
         Map<String, Object> resultMap = new HashMap<String, Object>();
         return modelandView;
     }
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> a416de706ad3952d103ae3553a19979957eb5552
 }

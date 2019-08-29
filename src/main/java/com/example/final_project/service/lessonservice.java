@@ -41,6 +41,10 @@ public class lessonservice {
 		return resultObject;
 	}
 
+	public Object getlesson(Object dataMap){
+		String sqlMapId=""
+	}
+
 	public Object saveObject(Map<String, Object> dataMap) {
 		String uniqueSequence = (String) dataMap.get("LESSON_NUM");
 
