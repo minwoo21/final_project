@@ -31,15 +31,15 @@ values(0010, '전공', '심화학', '변땡땡', 3, '화학관', 40);
 
 -- 강의명단
 insert into LESSON_MEMBER
-values(001, 14671, 0009);
+values(001, 14671, 0001);
 insert into LESSON_MEMBER
 values(002, 14672, 0009);
 insert into LESSON_MEMBER
-values(003, 14673, 0009);
+values(003, 14672, 0008);
 insert into LESSON_MEMBER
-values(004, 14674, 0009);
+values(004, 14673, 0009);
 insert into LESSON_MEMBER
-values(005, 14675, 0009);
+values(005, 14673, 0001);
 
 
 

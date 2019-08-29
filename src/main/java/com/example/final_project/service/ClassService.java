@@ -1,5 +1,8 @@
 package com.example.final_project.service;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import com.example.final_project.dao.ClassDao;
 import com.example.final_project.repository.ClassRepository;
 
@@ -18,7 +21,9 @@ public class ClassService {
 	public Object getnoticeList(Object dataMap) {
 		String sqlMapId = "classnotice.list";
 
-		Object resultObject = dao.getList(sqlMapId, dataMap);
+		Object resultObject = new HashMap<>();
+		((Map<String, Object>) resultObject).put("resultList", dao.getList(sqlMapId,dataMap));
+
 
 		return resultObject;
 	}

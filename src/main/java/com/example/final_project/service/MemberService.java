@@ -13,7 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
 @Service
-public class LoginService {
+public class MemberService {
 
     @Autowired
     private MemberRepository repository;
@@ -42,7 +42,7 @@ public class LoginService {
         ModelAndView modelAndView = new ModelAndView();
         String loginID = (String) paramMap.get("loginid");
         if (loginID != null) {
-            modelAndView.addObject("loginID", loginID);
+            modelAndView.addObject("loginid", loginID);
             modelAndView.setViewName(viewName);
         } else {
             modelAndView.setView(new RedirectView("/"));

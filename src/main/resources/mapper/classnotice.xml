@@ -8,7 +8,6 @@
 	<select id="list" resultType="Map" parameterType="Map" timeout="10">
 		select *
 		from LESSON_NOTICE
-		where LESSON_NUM = #{LESSON_NUM}
 	</select>
 
 	<select id="read" resultType="Map" parameterType="Map">
