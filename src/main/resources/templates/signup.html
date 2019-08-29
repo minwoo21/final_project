@@ -2,7 +2,7 @@
 <html xmlns="https://www.thymeleaf.org/" layout:decorator="layout/login">
 <th:block layout:fragment="head">
     <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
-    <script th:src="@{/js/address.js}"></script>
+    <script th:src="@{/js/signup.js}"></script>
 </th:block>
 <!-- 로그인 카드 -->
 <th:block layout:fragment="card.header">회원가입</th:block>
@@ -33,11 +33,11 @@
                         <span class="input-group-text"><span class="fas fa-lock"></span></span>
                     </div>
                     <input type="password" class="form-control" placeholder="패스워드" name="PASSWORD" id="password"
-                        required>
-                    <input type="password" class="form-control" placeholder="패스워드 확인" id="passwordcheck" required>
+                        pattern=".*(?=.{6,20})(?=.*[0-9])(?=.*[a-zA-Z]).*" maxlength="20" required>
+                    <input type="password" class="form-control" placeholder="패스워드 확인" id="passwordcheck" maxlength="20" required>
                 </div>
             </div>
-            <small class="form-text text-muted">필수 입력 항목입니다.</small>
+            <small class="form-text text-muted">필수 입력 항목입니다. 6~20자로 입력해주세요.(영문, 숫자 조합 필수, 특수문자 사용 가능)</small>
         </div>
         <div class="form-row">
             <!-- 이름 -->
@@ -73,9 +73,10 @@
             </div>
             <!-- 전화번호 -->
             <div class="form-group col">
-                <label for="phone" class="font-weight-bold">전화번호 ('-' 빼고 입력)</label>
-                <input type="tel" class="form-control" pattern="[0-9]{0,9,10,11}" placeholder="01012345678"
-                    name="phone" id="PHONE">
+                <label for="phone" class="font-weight-bold">전화번호</label>
+                <input type="tel" onkeyup="inputTelNumber(this)" class="form-control"
+                    pattern="[0-9]{2,3}-[0-9]{3-4}-[0-9]{4}" maxlength="13" placeholder="010-1234-5678" name="PHONE"
+                    id="phone">
             </div>
         </div>
         <!-- 주소 -->

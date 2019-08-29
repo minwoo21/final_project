@@ -11,6 +11,9 @@
         <div th:if="${login}==signupsuccess" class="alert alert-primary" role="alert">
             회원 가입이 완료되었습니다.
         </div>
+        <div th:if="${login}==signupfail" class="alert alert-danger" role="alert">
+            회원 가입에 실패했습니다.
+        </div>
         <div th:if="${login}==error" class="alert alert-danger" role="alert">
             로그인에 실패했습니다. 아이디와 패스워드를 확인해 주세요.
         </div>
