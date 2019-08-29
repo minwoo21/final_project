@@ -50,7 +50,7 @@ public class ClassController {
 		} else if ("homework".equals(action)) {
 			resultMap = hwService.getList(paramMap);
 			action = "homework";
-		}else if ("make".equals(action)) {
+		}else if ("make".equals(action)) { //과제 추가 버튼
 			resultMap = hwService.saveObject(paramMap);
 			action = "homework";
 		}else if ("hwdetail".equals(action)) {
@@ -58,12 +58,18 @@ public class ClassController {
 			action = "hwdetail";
 		}else if ("main_pro".equals(action)) {
 			action = "main_pro";
+		}else if ("hw_submit".equals(action)) { //과제 추가창
+			action = "hw_submit";
+		}else if ("hw_submit".equals(action)) { 
+			action = "hw_submit";
 		}else if ("test".equals(action)) {
 			action = "test";
 		}
 
 		String viewName = MAPPING + action;
+
 		modelandView = memberservice.checkLogin(paramMap, viewName);
+		modelandView.addObject("LESSON_NUM", paramMap.get("LESSON_NUM"));
 		modelandView.addObject("paramMap", paramMap);
 		modelandView.addObject("resultMap", resultMap);
 		return modelandView;
