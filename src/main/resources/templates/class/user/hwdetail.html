@@ -1,4 +1,5 @@
 <div xmlns:th="http://www.thymeleaf.org" layout:decorator="layout/defaultLayout">
+    <th:block layout:fragment="sidebar"> <th:block th:replace="fragments/sidebar :: sidebar_user"></th:block> </th:block>
     <th:block layout:fragment="body">
             <div class="container py-5">
                 <h3>내용</h3>
@@ -26,7 +27,8 @@
                     <div class="input-group mb-3 d-flex justify-content-center">
                         <textarea cols="110" rows="5" name="CONTENT"></textarea>
                         <div class="input-group-append">
-                            <button class="btn btn-outline-primary px-4" type="submit" formaction="#" formmethod="POST">제출</button>
+                            <button class="btn btn-outline-primary px-4" type="submit" th:value="${resultMap.HW_NUM}" name="HW_NUM" 
+                                formaction="/class/submit" formmethod="POST">제출</button>
                         </div>
                     </div>
 

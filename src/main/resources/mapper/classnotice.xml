@@ -16,13 +16,31 @@
 		from LESSON_NOTICE
 		where NUM = #{NUM}
 	</select>
+	<select id="member" resultType="Map" parameterType="Map">
+		SELECT LIST_NUM,  MEMBER.MEMBER_ID, LESSON_NUM, NAME , EMAIL, PHONE, ADDRESS_ZIPCODE, ADDRESS_ROAD,ADDRESS_LAND, ADDRESS_DETAIL,ADDRESS_SUBDETAIL
+		FROM LESSON_MEMBER
+		INNER JOIN  MEMBER
+		ON LESSON_MEMBER.MEMBER_ID=MEMBER.MEMBER_ID
+		WHERE LESSON_NUM = #{LESSON_NUM}
+	</select>
 
 	<insert id="update" parameterType="Map">
 	    
 	</insert>
 
 	<insert id="insert" parameterType="Map">
-	    
+	     INSERT INTO LESSON_NOTICE (
+			LESSON_NUM
+			, TITLE
+			, DATE
+			, CONTENT
+		)
+		values(
+			#{LESSON_NUM}
+			, #{TITLE}
+			, #{DATE}
+			, #{CONTENT}
+		)
 	</insert>
 
 	<delete id="delete" parameterType="Map">

@@ -1,4 +1,5 @@
 <div xmlns:th="http://www.thymeleaf.org" layout:decorator="layout/defaultLayout">
+    <th:block layout:fragment="sidebar"> <th:block th:replace="fragments/sidebar :: sidebar_user"></th:block> </th:block>
     <th:block layout:fragment="body">
         <h3>교과목 기본정보</h3>
         <table class="table">

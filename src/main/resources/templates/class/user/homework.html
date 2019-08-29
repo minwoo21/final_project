@@ -1,4 +1,5 @@
 <div xmlns:th="http://www.thymeleaf.org" layout:decorator="layout/defaultLayout">
+    <th:block layout:fragment="sidebar"> <th:block th:replace="fragments/sidebar :: sidebar_user"></th:block> </th:block>
     <th:block layout:fragment="body">
             <div class="container py-5">
                 <h3>과제</h3>
@@ -24,7 +25,6 @@
                             </tr>
                         </tbody>
                     </table>
-                    <button type="submit" formaction="/class/hw_submit" formmethod="POST">과제 만들기</button>
                 </form>
             </div>
     </th:block>

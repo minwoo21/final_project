@@ -27,11 +27,30 @@ public class ClassService {
 
 		return resultObject;
 	}
+	public Object getmember(Object dataMap) {
+		String sqlMapId = "classnotice.member";
+
+		Object resultObject = new HashMap<>();
+		((Map<String, Object>) resultObject).put("resultList", dao.getList(sqlMapId,dataMap));
+
+
+		return resultObject;
+	}
 
 	public Object getnoticeObject(Object dataMap) {
 		String sqlMapId = "classnotice.read";
 
 		Object resultObject = dao.getObject(sqlMapId, dataMap);
+
+		return resultObject;
+	}
+	public Object saveObject(Map<String, Object> dataMap) {
+		
+		String sqlMapId = "classnotice.insert";
+
+		Integer resultKey = (Integer) dao.saveObject(sqlMapId, dataMap);
+
+		Object resultObject = this.getnoticeList(dataMap);
 
 		return resultObject;
 	}

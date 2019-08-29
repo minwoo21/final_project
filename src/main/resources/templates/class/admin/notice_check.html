@@ -1,4 +1,5 @@
 <div xmlns:th="http://www.thymeleaf.org" layout:decorator="layout/defaultLayout">
+    <th:block layout:fragment="sidebar"> <th:block th:replace="fragments/sidebar :: sidebar_admin"></th:block> </th:block>
     <th:block layout:fragment="body">
             <div class="container py-5">
                 <h3>내용</h3>
@@ -15,10 +16,6 @@
                         <label for="reg_id">제출 마감일</label>
                         <input type="text" class="form-control" th:value="${resultMap.NAME}">
                     </div>
-                    <div class="mb-3">
-                            <label for="reg_id">제출 마감일</label>
-                            <input type="text" class="form-control" th:value="${resultMap.DATE}">
-                        </div>
                     <div class="mb-3">
                         <label for="content">내용</label>
                         <textarea class="form-control" rows="5" th:text=${resultMap.CONTENT}></textarea>

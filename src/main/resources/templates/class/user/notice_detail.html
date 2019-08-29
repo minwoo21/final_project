@@ -1,0 +1,41 @@
+<div xmlns:th="http://www.thymeleaf.org" layout:decorator="layout/defaultLayout">
+    <th:block layout:fragment="sidebar"> <th:block th:replace="fragments/sidebar :: sidebar_user"></th:block> </th:block>
+    <th:block layout:fragment="body">
+            <div class="container py-5">
+                <h3>내용</h3>
+                <div class="dropdown-divider"></div>
+                
+                <div>
+                    <div class="dropdown-divider"></div>
+                    <div class="mb-3">
+                        <label for="title">제목</label>
+                        <input type="text" class="form-control" th:value="${resultMap.TITLE}">
+                    </div>
+    
+                    <div class="mb-3">
+                        <label for="reg_id">제출 마감일</label>
+                        <input type="text" class="form-control" th:value="${resultMap.NAME}">
+                    </div>
+                    <div class="mb-3">
+                            <label for="reg_id">제출 마감일</label>
+                            <input type="text" class="form-control" th:value="${resultMap.DATE}">
+                        </div>
+                    <div class="mb-3">
+                        <label for="content">내용</label>
+                        <textarea class="form-control" rows="5" th:text=${resultMap.CONTENT}></textarea>
+                    </div>
+
+                    <div>
+                        <form>
+                            <th:block th:replace="fragments/login"></th:block>
+                            <th:block th:replace="fragments/lesson"></th:block>
+                            <button type="submit" class="btn btn-sm btn-primary" formaction="/class/notice" formmethod="POST">뒤로가기</button>
+                        </form>
+                        
+                    </div>
+                    
+                </div>
+               
+            </div>
+    </th:block>
+</div>

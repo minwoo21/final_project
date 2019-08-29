@@ -1,4 +1,5 @@
 <div xmlns:th="http://www.thymeleaf.org" layout:decorator="layout/defaultLayout">
+    <th:block layout:fragment="sidebar"> <th:block th:replace="fragments/sidebar :: sidebar_admin"></th:block> </th:block>
     <th:block layout:fragment="body">
         <div class="container py-5">
                 <h3>공지사항</h3>
@@ -11,7 +12,6 @@
                             <tr>
                                 <th scope="col">#</th>
                                 <th scope="col">title</th>
-                                <th scope="col">name</th>
                                 <th scope="col">DATE</th>
                             </tr>
                         </thead>
@@ -19,24 +19,26 @@
                             <tr th:each="resultData: ${resultMap.resultList}">
                                 <td th:text=${resultData.NUM}></th>
                                 <td>
-                                    <button type="submit" name="NUM" class="bg-white border-0 w-100 m-0" formaction="/class/notice_detail" formmethod="POST" th:value="${resultData.NUM}" th:text=${resultData.TITLE}></button>
+                                    <button type="submit" name="NUM" class="bg-white border-0 w-100 m-0" formaction="/class/notice_check" formmethod="POST" th:value="${resultData.NUM}" th:text=${resultData.TITLE}></button>
                                 </th>
-                                <td th:text=${resultData.NAME}></th>
                                 <td th:text=${resultData.DATE}></th>
                             </tr>
                         </tbody>
                     </table>
+
+                    <div class="input-group mb-3 col-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text"><i class="fas fa-search"></i></span>
+                            </div>
+                        <input type="text" class="form-control" aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
+                        </div>
+                        <button class="btn btn-outline-secondary" type="submit" formaction="/class/addform" formmethod="POST">공지 올리기</button>
+                    </div>
                 </form>
                 
-                <div class="input-group mb-3 col-4">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text"><i class="fas fa-search"></i></span>
-                        </div>
-                    <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Button</button>
-                    </div>
-                </div>
+                
         </div>
     </th:block>
 </div>

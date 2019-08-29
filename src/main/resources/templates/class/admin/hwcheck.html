@@ -1,0 +1,31 @@
+<div xmlns:th="http://www.thymeleaf.org" layout:decorator="layout/defaultLayout">
+    <th:block layout:fragment="sidebar"> <th:block th:replace="fragments/sidebar :: sidebar_admin"></th:block> </th:block>
+    <th:block layout:fragment="body">
+        <div class="container py-5">
+                <h3>제출자 명단</h3>
+                <div class="dropdown-divider"></div>
+                <form>
+                    <th:block th:replace="fragments/login"></th:block>
+                    <th:block th:replace="fragments/lesson"></th:block>
+                    <table class="table text-center">
+                        <thead>
+                            <tr>
+                                <th scope="col">이름</th>
+                                <th scope="col">날짜</th>
+                                <th scope="col">내용</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="resultData: ${resultMap.resultList}">
+                                <td th:text=${resultData.MEMBER_NAME}></th>
+                                <td th:text=${resultData.DATE}></th>
+                                <td th:text=${resultData.CONTENT}></th>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+                
+                
+        </div>
+    </th:block>
+</div>

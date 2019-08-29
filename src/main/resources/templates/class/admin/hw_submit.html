@@ -1,4 +1,5 @@
 <div xmlns:th="http://www.thymeleaf.org" layout:decorator="layout/defaultLayout">
+    <th:block layout:fragment="sidebar"> <th:block th:replace="fragments/sidebar :: sidebar_admin"></th:block> </th:block>
     <th:block layout:fragment="body">
             <div class="container py-5">
                 <h3>과제</h3>
@@ -15,8 +16,8 @@
                         
                         <textarea cols="100" rows="8" name="CONTENT"></textarea>
                         <div>
-                            <button type="submit" formaction="/class/hw_submit">submit</button>
-                            <button type="submit" formaction="/class/make" formmethod="POST">cancel</button>
+                            <button type="submit" formaction="/class/make" formmethod="POST">올리기</button>
+                            <button type="submit" formaction="/class/homework">취소</button>
                         </div>
                     </form>
                     
