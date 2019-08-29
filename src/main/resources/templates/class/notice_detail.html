@@ -5,15 +5,28 @@
                 <div class="dropdown-divider"></div>
                 
                 <div>
-                        <div class="pb-5">
-                            과제명: <input type="text" th:value=${resultMap.TITLE}>
-                            작성자: <input type="text" th:value=${resultMap.NAME}>
-                            날짜 : <input type="date" th:value=${resultMap.DATE}>
+                    <div class="dropdown-divider"></div>
+                    <div class="mb-3">
+                        <label for="title">제목</label>
+                        <input type="text" class="form-control" name="title" id="title" th:value="${resultMap.TITLE}">
+                    </div>
+    
+                    <div class="mb-3">
+                        <label for="reg_id">제출 마감일</label>
+                        <input type="text" class="form-control" name="reg_id" id="reg_id" th:value="${resultMap.NAME}">
+                    </div>
+                    <div class="mb-3">
+                            <label for="reg_id">제출 마감일</label>
+                            <input type="text" class="form-control" name="reg_id" id="reg_id" th:value="${resultMap.DATE}">
                         </div>
-                        <p th:text=${resultMap.CONTENT}></p>
-                        <div>
-                            <button type="submit">뒤로가기</button>
-                        </div>
+                    <div class="mb-3">
+                        <label for="content">내용</label>
+                        <textarea class="form-control" rows="5" name="content" id="content" th:value=${resultMap.CONTENT}></textarea>
+                    </div>
+
+                    <div>
+                        <button type="submit">뒤로가기</button>
+                    </div>
                     
                 </div>
                
