@@ -13,7 +13,7 @@
 	<select id="read" resultType="Map" parameterType="Map">
 		select *
 		from LESSON
-		where LESSON_NUM = #{NUM}
+		where LESSON_NUM = #{LESSON_NUM}
 	</select>
 
 	<select id="mylesson" resultType="Map" parameterType="Map">

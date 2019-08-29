@@ -1,11 +1,11 @@
 <div class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-sand" style="display:none" id="mySidebar">
         <form>
             <th:block th:replace="fragments/login"></th:block>
-            <button class="w3-bar-item w3-button w3-xlarge " formaction="/class/main" formmethod="POST">메인</button>
+            <th:block th:replace="fragments/lesson"></th:block>
+            <button class="w3-bar-item w3-button w3-xlarge " formaction="/class/main" formmethod="POST" >메인</button>
             <button class="w3-bar-item w3-button w3-xlarge " formaction="/class/notice" formmethod="POST">공지사항</button>
             <button class="w3-bar-item w3-button w3-xlarge " formaction="/class/introduction"
                 formmethod="POST">강의소개</button>
-            <button class="w3-bar-item w3-button w3-xlarge " formaction="/class/homework" formmethod="POST">내
-                과제</button>
+            <button class="w3-bar-item w3-button w3-xlarge " formaction="/class/homework" formmethod="POST">내 과제</button>
         </form>
     </div>
