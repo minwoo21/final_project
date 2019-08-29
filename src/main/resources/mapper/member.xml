@@ -14,7 +14,7 @@
 		from STUDENT
 	</select>
 
-	<select id="login" resultType="Integer" parameterType="Map">
+	<select id="login" resultType="String" parameterType="Map">
 		select MEMBER_ID
 		from MEMBER
 		where USERNAME=#{USERNAME}

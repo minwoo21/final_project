@@ -28,9 +28,9 @@
         <button id="openNav" class="w3-bar-item w3-button bg-primary w3-xlarge mx-2"
             onclick="w3_open()">&#9776;</button>
         <form method="POST">
-            <input type="hidden" value="">
+            <th:block th:replace="fragments/login"></th:block>
             <div class="w3-left row mx-1">
-                <button class="w3-bar-item w3-button w3-xlarge " formaction="#" formmethod="POST">Home</button>
+                <button class="w3-bar-item w3-button w3-xlarge " formaction="/" formmethod="POST">Home</button>
                 <button class="w3-bar-item w3-button w3-xlarge " formaction="#" formmethod="POST">내강의</button>
                 <button class="w3-bar-item w3-button w3-xlarge " formaction="#" formmethod="POST">강의신청</button>
                 <button class="w3-bar-item w3-button w3-xlarge " formaction="#" formmethod="POST">내 할일</button>
@@ -44,16 +44,7 @@
     </div>
 
     <!-- sidebar -->
-    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-sand" style="display:none" id="mySidebar">
-        <form>
-            <button class="w3-bar-item w3-button w3-xlarge " formaction="/class/main" formmethod="POST">메인</button>
-            <button class="w3-bar-item w3-button w3-xlarge " formaction="/class/notice" formmethod="POST">공지사항</button>
-            <button class="w3-bar-item w3-button w3-xlarge " formaction="/class/introduction"
-                formmethod="POST">강의소개</button>
-            <button class="w3-bar-item w3-button w3-xlarge " formaction="/class/homework" formmethod="POST">내
-                과제</button>
-        </form>
-    </div>
+    <th:block th:replace="fragments/sidebar_s"></th:block>
 
     <div id="main">
 
