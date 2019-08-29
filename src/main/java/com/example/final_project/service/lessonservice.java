@@ -34,7 +34,7 @@ public class lessonservice {
 	}
 
 	public Object getObject(Object dataMap) {
-		String sqlMapId = "LESSON.list";
+		String sqlMapId = "LESSON.read";
 
 		Object resultObject = dao.getObject(sqlMapId, dataMap);
 

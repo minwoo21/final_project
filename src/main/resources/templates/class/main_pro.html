@@ -1,4 +1,4 @@
-<div xmlns:th="http://www.thymeleaf.org" layout:decorator="layout/defaultLayout">
+<div xmlns:th="http://www.thymeleaf.org" layout:decorator="layout/defaultForPro">
     <th:block layout:fragment="body">
         <div class="container py-5">
             <!-- 프로그래스바 진행률 -->
@@ -8,7 +8,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">강의명</h5>
-                                <h6 class="card-subtitle mb-2" th:text=${resultMap.LESSON_NAME}></h6>
+                                <h6 class="card-subtitle mb-2" ></h6>
                             </div>
                         </div>
                     </div>
@@ -16,7 +16,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h5 class="card-title">교수명</h5>
-                                <h6 class="card-subtitle mb-2" th:text=${resultMap.LESSON_PRO}></h6>
+                                <h6 class="card-subtitle mb-2" ></h6>
                             </div>
                         </div>
                     </div>
