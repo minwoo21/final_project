@@ -7,7 +7,6 @@ import com.example.final_project.service.LoginService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -25,9 +24,7 @@ public class LoginController {
         String viewName = new String();
         if (loginID != null) {
             viewName = "home";
-            modelandView.addObject("login", "login");
-        } else if (login == null) {
-            viewName = "login";
+            modelandView.addObject("loginid", loginID);
         } else if (login.equals("try") == true) {
             String username = (String) paramMap.get("username");
             String password = (String) paramMap.get("password");
@@ -41,7 +38,11 @@ public class LoginController {
             }
         } else if (login.equals("signup")) {
             Object demo = service.doSignup(paramMap);
-            modelandView.addObject("login", "signupsuccess");
+            if (demo.equals(1) == true) {
+                modelandView.addObject("login", "signupsuccess");
+            } else {
+                modelandView.addObject("login", "signupfail");
+            }
             viewName = "login";
         } else {
             viewName = "login";
