@@ -35,6 +35,7 @@ public class ClassController {
 			ModelAndView modelandView) {
 
 		Object resultMap = new HashMap<String, Object>() ;
+		String type = (String) memberservice.getMemberInfo(paramMap).get("MEMBERTYPE");
 
 		// divided depending on action value
 		if ("main".equals(action)) {
@@ -46,7 +47,7 @@ public class ClassController {
 			resultMap = classService.getnoticeObject(paramMap);
 			action = "notice_detail";
 		}else if ("introduction".equals(action)) {
-
+			action = "introduction";
 		} else if ("homework".equals(action)) {
 			resultMap = hwService.getList(paramMap);
 			action = "homework";
@@ -60,7 +61,7 @@ public class ClassController {
 			action = "main_pro";
 		}else if ("hw_submit".equals(action)) { //과제 추가창
 			action = "hw_submit";
-		}else if ("hw_submit".equals(action)) { 
+		}else if ("hw_submit".equals(action)) {
 			action = "hw_submit";
 		}else if ("test".equals(action)) {
 			action = "test";
@@ -69,6 +70,7 @@ public class ClassController {
 		String viewName = MAPPING + action;
 
 		modelandView = memberservice.checkLogin(paramMap, viewName);
+		modelandView.addObject("sidebar", "show");
 		modelandView.addObject("LESSON_NUM", paramMap.get("LESSON_NUM"));
 		modelandView.addObject("paramMap", paramMap);
 		modelandView.addObject("resultMap", resultMap);
