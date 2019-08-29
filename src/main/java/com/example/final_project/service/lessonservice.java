@@ -26,8 +26,7 @@ public class lessonservice {
 		String sqlMapId = "LESSON.list";
 
 		Object resultObject = new HashMap<>();
-		 ((Map<String, Object>) resultObject).put("resultList", dao.getList(sqlMapId,
-		 dataMap));
+		 ((Map<String, Object>) resultObject).put("resultList", dao.getList(sqlMapId,dataMap));
 		
 
 		return resultObject;
@@ -35,7 +34,7 @@ public class lessonservice {
 
 	public Object getObject(Object dataMap) {
 		String sqlMapId = "LESSON.read";
-
+		
 		Object resultObject = dao.getObject(sqlMapId, dataMap);
 
 		return resultObject;
@@ -87,4 +86,16 @@ public class lessonservice {
 
 		return resultObject;
 	}
+
+	public Object inputlesson(Object dataMap) {
+		String sqlMapId = "LESSON.insert";
+
+		Integer resultKey = (Integer) dao.saveObject(sqlMapId, dataMap);
+
+		Object resultObject = this.getObject(dataMap);
+
+		return resultObject;
+
+	}
+	
 }

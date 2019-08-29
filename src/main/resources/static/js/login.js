@@ -8,7 +8,7 @@ $(document).ready(function () {
 
             var inputVal = $(this).val();
 
-            $(this).val(inputVal.replace(/[^a-z0-9]/gi, ''));
+            $(this).val(inputVal.replace(/[^a-z0-9]/g, ''));
 
         }
 

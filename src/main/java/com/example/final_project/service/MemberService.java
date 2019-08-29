@@ -37,11 +37,23 @@ public class MemberService {
         return dao.saveObject(sqlMapId, dataMap);
     }
 
+    public Boolean checkUsername(String username) {
+        String sqlMapId = "member.login";
+        Integer usernameExist = (Integer) dao.getObject(sqlMapId, username);
+        Boolean result = (usernameExist == null) ? true : false;
+        return result;
+    }
+
     public ModelAndView checkLogin(Map<String, Object> paramMap, String viewName) {
-        Map<String, String> resultMap = new HashMap<String, String>();
         ModelAndView modelAndView = new ModelAndView();
         String loginID = (String) paramMap.get("loginid");
         if (loginID != null) {
+            Map<String, Object> dataMap = new HashMap<String, Object>();
+            String sqlMapId = "member.info";
+            dataMap = (Map<String, Object>) dao.getObject(sqlMapId, loginID);
+            modelAndView.addObject("username", dataMap.get("USERNAME"));
+            modelAndView.addObject("name", dataMap.get("NAME"));
+            modelAndView.addObject("membertype", dataMap.get("MEMBERTYPE"));
             modelAndView.addObject("loginid", loginID);
             modelAndView.setViewName(viewName);
         } else {

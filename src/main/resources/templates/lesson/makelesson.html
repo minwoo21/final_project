@@ -1,0 +1,100 @@
+<html xmlns:th="http://www.thymeleaf.org" layout:decorator="layout/defaultLayout">
+    <th:block layout:fragment="body">
+    <th:block layout:fragment="layout.search_enrolment"></th:block>
+
+    <div class="container pt-3 ">
+        <h1>강의 만들기</h1>
+        <div class="container p-3">
+            <form role="form" method="POST" action="/lesson/enrolment">
+                <th:block th:replace="fragments/login"></th:block>
+                <div class="card">
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <span class="fas fa-list-ol" id="LESSON_NUM"></span>
+                            </div>                            
+                        </div>
+                        <input type="text" class="form-control" placeholder="강의번호" aria-label="강의번호" aria-describedby="LESSON_NUM" name="LESSON_NUM">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <span class="fas fa-info-circle" id="TYPE"></span>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control" placeholder="구분" aria-label="구분" aria-describedby="TYPE" name="TYPE">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <span class="fas fa-scroll" id="LESSON_NAME"></span>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control" placeholder="강의명" aria-label="강의명" aria-describedby="LESSON_NAME" name="LESSON_NAME">
+                    </div>
+            
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <span class="fas fa-user-circle" id="LESSON_PRO"></span>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control" placeholder="강사명" aria-label="강사명" aria-describedby="LESSON_PRO" name="LESSON_PRO">
+                    </div>
+            
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <span class="fas fa-clock" id="LESSON_TIME"></span>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control" placeholder="강의시간" aria-label="강의시간" aria-describedby="LESSON_TIME" name="LESSON_TIME">
+                    </div>
+            
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <span class="fas fa-city" id="LESSON_PLACE"></span>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control" placeholder="강의장소" aria-label="강의장소" aria-describedby="LESSON_PLACE" name="LESSON_PLACE">
+                    </div>
+            
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <span class="fas fa-users" id="LESSON_LIMIT"></span>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control" placeholder="제한인원" aria-label="제한인원" aria-describedby="LESSON_LIMIT" name="LESSON_LIMIT">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <span class="fas fa-calendar-alt" id="LESSON_START"></span>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control" placeholder="시작날짜(예시:2000.01.01)" aria-label="시작날짜" aria-describedby="LESSON_START" name="LESSON_START">
+                    </div>
+
+                    <div class="input-group mb-3">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text">
+                                <span class="far fa-calendar-alt" id="LESSON_END"></span>
+                            </div>
+                        </div>
+                        <input type="text" class="form-control" placeholder="끝날짜(예시:2000.01.01)" aria-label="끝날짜" aria-describedby="LESSON_END" name="LESSON_END">
+                    </div>
+
+                    <div class="d-flex justify-content-end">   
+                        <button type="submit" class="btn btn-primary m-3">취소</button>
+                        <button type="submit" class="btn btn-primary m-3" name="makelesson" value="submit">확인</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </th:block>
+</html>

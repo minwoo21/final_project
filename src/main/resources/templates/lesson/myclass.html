@@ -17,7 +17,7 @@
                             <tr th:each="resultData: ${resultMap.resultList}">
                                 <td th:text=${resultData.MEMBER_ID}></th>
                                 <td>
-                                    <button type="submit" name="NUM" class="bg-white border-0 w-100 m-0" formaction="/class/main" formmethod="POST" th:value="${resultData.LESSON_NUM}" th:text=${resultData.LESSON_NAME}></button>
+                                    <button type="submit" name="LESSON_NUM" class="bg-white border-0 w-100 m-0" formaction="/class/main" formmethod="POST" th:value="${resultData.LESSON_NUM}" th:text=${resultData.LESSON_NAME}></button>
                                 </td>
                                 <td th:text=${resultData.LESSON_PRO}></td>
                             </tr>

@@ -14,7 +14,9 @@
 			, LESSON_PRO
 			, LESSON_TIME
 			, LESSON_PLACTE
-			, LESSON_LIMIT			
+			, LESSON_LIMIT
+			, LESSON_START
+			, LESSON_END			
 		from LESSON
 		<where>
 			<if test="COMMON_CODE_ID != null">
@@ -33,11 +35,13 @@
 			, LESSON_TIME
 			, LESSON_PLACTE
 			, LESSON_LIMIT
+			, LESSON_START
+			, LESSON_END
 		from LESSON
 		where LESSON = #{LESSON}
 	</select>
 
-	<insert id="update" parameterType="Map">
+	<update id="update" parameterType="Map">
 	    update LESSON
 		set LESSON_NUM = #{LESSON_NUM} 			
 			, TYPE = #{TYPE} 			
@@ -45,9 +49,11 @@
 			, LESSON_PRO = #{LESSON_PRO}
 			, LESSON_TIME = #{LESSON_TIME}
 			, LESSON_PLACE = #{LESSON_PLACE}
-			, LESSON_LIMIT = #{LESSON_LIMIT} 			
+			, LESSON_LIMIT = #{LESSON_LIMIT}
+			, LESSON_START = #{LESSON_START}
+			, LESSON_END = #{LESSON_END}
 		where LESSON = #{LESSON}
-	</insert>
+	</update>
 
 	<insert id="insert" parameterType="Map">
 	    INSERT INTO LESSON (
@@ -58,6 +64,8 @@
 			, LESSON_TIME
 			, LESSON_PLACTE
 			, LESSON_LIMIT
+			, LESSON_START
+			, LESSON_END
 		)
 		values(
 			#{LESSON_NUM}			
@@ -66,7 +74,9 @@
 			, #{LESSON_PRO}			
 			, #{LESSON_TIME}
 			, #{LESSON_PLACE}
-			, #{LESSON_LIMIT}			
+			, #{LESSON_LIMIT}
+			, #{LESSON_START}
+			, #{LESSON_END}			
 		)
 	</insert>
 

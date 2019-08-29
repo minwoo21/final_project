@@ -5,6 +5,8 @@
                 <div class="dropdown-divider"></div>
                 <div>
                     <form>
+                        <th:block th:replace="fragments/login"></th:block>
+                        <th:block th:replace="fragments/lesson"></th:block>
                         <div class="pb-5">
                             과제명: <input type="text" name="HW_NAME">
                             작성자: <input type="text" name="LESSON_NUM">
