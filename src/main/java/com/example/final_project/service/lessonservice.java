@@ -86,4 +86,16 @@ public class lessonservice {
 
 		return resultObject;
 	}
+
+	public Object inputlesson(Object dataMap) {
+		String sqlMapId = "LESSON.insert";
+
+		Integer resultKey = (Integer) dao.saveObject(sqlMapId, dataMap);
+
+		Object resultObject = this.getObject(dataMap);
+
+		return resultObject;
+
+	}
+	
 }
