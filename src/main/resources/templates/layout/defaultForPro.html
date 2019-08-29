@@ -28,12 +28,11 @@
         <button id="openNav" class="w3-bar-item w3-button bg-primary w3-xlarge mx-2"
             onclick="w3_open()">&#9776;</button>
         <form method="POST">
-            <th:block th:replace="fragments/login"></th:block>
+            <input type="hidden" value="">
             <div class="w3-left row mx-1">
-                <button class="w3-bar-item w3-button w3-xlarge " formaction="/" formmethod="POST">Home</button>
-                <button class="w3-bar-item w3-button w3-xlarge " formaction="/lesson/myclass" formmethod="POST">내강의</button>
+                <button class="w3-bar-item w3-button w3-xlarge " formaction="#" formmethod="POST">Home</button>
+                <button class="w3-bar-item w3-button w3-xlarge " formaction="#" formmethod="POST">내강의</button>
                 <button class="w3-bar-item w3-button w3-xlarge " formaction="#" formmethod="POST">강의신청</button>
-                <button class="w3-bar-item w3-button w3-xlarge " formaction="#" formmethod="POST">강의 만들기</button>
                 <button class="w3-bar-item w3-button w3-xlarge " formaction="#" formmethod="POST">내 할일</button>
             </div>
             <div class="w3-right row">
@@ -45,11 +44,16 @@
     </div>
 
     <!-- sidebar -->
-    <th:block th:replace="fragments/sidebar_s"></th:block>
+    <div class="w3-sidebar w3-bar-block w3-card w3-animate-left w3-sand" style="display:none" id="mySidebar">
+        <form>
+            <button class="w3-bar-item w3-button w3-xlarge " formaction="/class/notice" formmethod="POST">공지사항</button>
+            <button class="w3-bar-item w3-button w3-xlarge " formaction="/class/introduction" formmethod="POST">강의소개 수정</button>
+            <button class="w3-bar-item w3-button w3-xlarge " formaction="/class/member" formmethod="POST">맴버 관리</button>
+            <button class="w3-bar-item w3-button w3-xlarge " formaction="/class/homework" formmethod="POST">과제 관리</button>
+        </form>
+    </div>
 
     <div id="main">
-
-
 
         <!-- page content body 구성 -->
         <th:block layout:fragment="body"></th:block>

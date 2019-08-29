@@ -31,20 +31,22 @@ values(0010, '전공', '심화학', '변땡땡', 3, '화학관', 40, '2019.08.30
 
 -- 강의명단
 insert into LESSON_MEMBER
-values(001, 14671, 0009);
+values(001, 14671, 0001);
 insert into LESSON_MEMBER
 values(002, 14672, 0009);
 insert into LESSON_MEMBER
-values(003, 14673, 0009);
+values(003, 14672, 0008);
 insert into LESSON_MEMBER
-values(004, 14674, 0009);
+values(004, 14673, 0009);
 insert into LESSON_MEMBER
-values(005, 14675, 0009);
+values(005, 14673, 0001);
+
+
 
 
 insert into LESSON_NOTICE
-values(001, '공지 1', '우앙', '2019-08-27','와아앙앙 미쳤ㄲㄸㄱ러러러ㅓ말');
+values(001, 0001, '공지 1', '우앙', '2019-08-27','와아앙앙 미쳤ㄲㄸㄱ러러러ㅓ말');
 insert into LESSON_NOTICE
-values(002, '공지 2', '우앙', '2019-08-27','와ㄷㅈㄷㅈㄷㅈㄲㄸㄱ러러러ㅓ말');
+values(002, 0001, '공지 2', '우앙', '2019-08-27','와ㄷㅈㄷㅈㄷㅈㄲㄸㄱ러러러ㅓ말');
 insert into LESSON_NOTICE
-values(003, '공지 3', '우앙', '2019-08-27','와아2323232ㄲㄸㄱ러러러ㅓ말');
+values(003, 0002, '공지 3', '우앙', '2019-08-27','와아2323232ㄲㄸㄱ러러러ㅓ말');

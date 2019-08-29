@@ -6,12 +6,22 @@
 
 <mapper namespace="LESSON">
 	<select id="list" resultType="Map" parameterType="Map" timeout="10">
-		
+		select *
+		from LESSON
 	</select>
 
 	<select id="read" resultType="Map" parameterType="Map">
 		select *
 		from LESSON
+		where LESSON_NUM = #{NUM}
+	</select>
+
+	<select id="mylesson" resultType="Map" parameterType="Map">
+		SELECT MEMBER_ID, LESSON_MEMBER.LESSON_NUM, LESSON_NAME,LESSON_PRO
+		FROM LESSON_MEMBER
+		INNER JOIN LESSON
+		ON LESSON_MEMBER.LESSON_NUM=LESSON.LESSON_NUM
+		<!-- WHERE  LESSON_MEMBER.MEMBER_ID = #{MEMBER_ID}; -->
 	</select>
 
 	<insert id="update" parameterType="Map">

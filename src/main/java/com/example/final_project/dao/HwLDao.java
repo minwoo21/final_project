@@ -5,7 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public class lessondao{
+public class HwLDao{
 
 	@Autowired
 	private SqlSessionTemplate sqlSession;
@@ -37,11 +37,6 @@ public class lessondao{
 	public Object deleteObject(String sqlMapId, Object dataMap) {
 		
 		Integer resultObject = sqlSession.delete(sqlMapId,dataMap);
-		return resultObject;
-	}
-	public Object getmylesson(String sqlMapId, Object dataMap){
-		Object resultObject = sqlSession.selectList(sqlMapId, dataMap);
-
 		return resultObject;
 	}
 }

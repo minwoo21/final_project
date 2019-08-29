@@ -2,13 +2,16 @@
 <html xmlns="https://www.thymeleaf.org/" layout:decorator="layout/login">
 <th:block layout:fragment="head">
     <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
-    <script th:src="@{/js/address.js}"></script>
+    <script th:src="@{/js/signup.js}"></script>
+    <script th:src="@{/js/login.js}"></script>
+    <link rel="stylesheet" th:href="@{/css/login.css}">
 </th:block>
 <!-- 로그인 카드 -->
 <th:block layout:fragment="card.header">회원가입</th:block>
 <th:block layout:fragment="card.body">
     <!-- 폼 시작 -->
     <form action="/" name="signup">
+        <input type="hidden" name="login" value="signup">
         <!-- 아이디 -->
         <div class="form-group">
             <label for="username" class="font-weight-bold">아이디</label>
@@ -17,7 +20,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><span class="fas fa-user"></span></span>
                     </div>
-                    <input type="text" class="form-control" placeholder="아이디" name="username" id="username" required>
+                    <input type="text" class="form-control ime-mode" placeholder="아이디" name="USERNAME" id="username" required>
                 </div>
                 <button class="btn btn-outline-primary mx-2" id="idcheck">중복확인</button>
             </div>
@@ -31,30 +34,33 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text"><span class="fas fa-lock"></span></span>
                     </div>
-                    <input type="password" class="form-control" placeholder="패스워드" name="password" id="password" required>
-                    <input type="password" class="form-control" placeholder="패스워드 확인" id="passwordcheck" required>
+                    <input type="password" class="form-control" placeholder="패스워드" name="PASSWORD" id="password"
+                        pattern=".*(?=.{6,20})(?=.*[0-9])(?=.*[a-zA-Z]).*" maxlength="20" required>
+                    <input type="password" class="form-control" placeholder="패스워드 확인" id="passwordcheck" maxlength="20" required>
                 </div>
             </div>
-            <small class="form-text text-muted">필수 입력 항목입니다.</small>
+            <small class="form-text text-muted">필수 입력 항목입니다. 6~20자로 입력해주세요.(영문, 숫자 조합 필수, 특수문자 사용 가능)</small>
         </div>
         <div class="form-row">
             <!-- 이름 -->
             <div class="form-group col">
                 <label for="name" class="font-weight-bold">이름</label>
-                <input type="text" class="form-control" placeholder="홍길동" name="name" id="name" required>
+                <input type="text" class="form-control" placeholder="홍길동" name="NAME" id="name" required>
                 <small class="form-text text-muted">필수 입력 항목입니다.</small>
             </div>
             <!-- 회원구분 -->
             <div class="form-group col">
-                <label for="usertype" class="font-weight-bold">회원구분</label>
+                <label for="membertype" class="font-weight-bold">회원구분</label>
                 <div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="usertype1" name="usertype" class="custom-control-input" value="user" checked>
-                        <label class="custom-control-label" for="usertype1">일반회원</label>
+                        <input type="radio" id="membertype1" name="MEMBERTYPE" class="custom-control-input" value="user"
+                            checked>
+                        <label class="custom-control-label" for="membertype1">일반회원</label>
                     </div>
                     <div class="custom-control custom-radio custom-control-inline">
-                        <input type="radio" id="usertype2" name="usertype" class="custom-control-input" value="admin">
-                        <label class="custom-control-label" for="usertype2">관리자</label></div>
+                        <input type="radio" id="membertype2" name="MEMBERTYPE" class="custom-control-input"
+                            value="admin">
+                        <label class="custom-control-label" for="membertype2">관리자</label></div>
                 </div>
             </div>
         </div>
@@ -62,30 +68,36 @@
             <!-- 이메일 -->
             <div class="form-group col">
                 <label for="email" class="font-weight-bold">이메일</label>
-                <input type="email" class="form-control" name="email" id="email" placeholder="username@example.com">
+                <input type="email" class="form-control" name="EMAIL" id="email" placeholder="username@example.com"
+                    required>
                 <small class="form-text text-muted">필수 입력 항목입니다.</small>
                 <small class="form-text text-muted">비밀번호 찾기 시 이용되오니 정확히 입력해주세요.</small>
             </div>
             <!-- 전화번호 -->
             <div class="form-group col">
-                <label for="phone" class="font-weight-bold">전화번호 ('-' 빼고 입력)</label>
-                <input type="tel" class="form-control" pattern="[0-9]{11}" placeholder="01012345678" name="phone"
-                    id="phone" required>
+                <label for="phone" class="font-weight-bold">전화번호</label>
+                <input type="tel" onkeyup="inputTelNumber(this)" class="form-control"
+                    pattern="[0-9]{2,3}-[0-9]{3-4}-[0-9]{4}" maxlength="13" placeholder="010-1234-5678" name="PHONE"
+                    id="phone">
             </div>
         </div>
         <!-- 주소 -->
         <div class="form-group">
             <label for="" class="font-weight-bold">주소</label>
             <div class="form-inline">
-                <input type="text" class="form-control" id="postcode" placeholder="우편번호" readonly>
+                <input type="text" class="form-control" id="postcode" name="ADDRESS_ZIPCODE" placeholder="우편번호"
+                    readonly>
                 <input type="button" class="btn btn-outline-primary ml-2" onclick="execDaumPostcode()"
                     value="우편번호 찾기"><br>
             </div>
-            <input type="text" class="form-control my-1" id="roadAddress" placeholder="도로명주소" readonly>
-            <input type="text" class="form-control my-1" id="jibunAddress" placeholder="지번주소" readonly>
+            <input type="text" class="form-control my-1" id="roadAddress" name="ADDRESS_ROAD" placeholder="도로명주소"
+                readonly>
+            <input type="text" class="form-control my-1" id="jibunAddress" name="ADDRESS_LAND" placeholder="지번주소"
+                readonly>
             <span id="guide" class="form-control my-1" style="color:#999;display:none"></span>
-            <input type="text" class="form-control my-1" id="detailAddress" placeholder="상세주소">
-            <input type="text" class="form-control mt-1" id="extraAddress" placeholder="참고항목" readonly>
+            <input type="text" class="form-control my-1" id="detailAddress" name="ADDRESS_DETAIL" placeholder="상세주소">
+            <input type="text" class="form-control mt-1" id="extraAddress" name="ADDRESS_SUBDETAIL" placeholder="참고항목"
+                readonly>
         </div>
         <!-- 가입버튼 -->
         <button type="submit" class="col-12 btn btn-primary">

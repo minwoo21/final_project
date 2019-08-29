@@ -14,9 +14,9 @@
 		from STUDENT
 	</select>
 
-	<select id="login" resultType="Integer" parameterType="Map">
+	<select id="login" resultType="String" parameterType="Map">
 		select MEMBER_ID
-		from STUDENT
+		from MEMBER
 		where USERNAME=#{USERNAME}
 		and PASSWORD=#{PASSWORD};
 	</select>
@@ -25,7 +25,7 @@
 	    
 	</insert>
 
-	<insert id="insert" parameterType="Map">
+	<insert id="signup" parameterType="Map">
 	    insert into MEMBER (
 			MEMBER_ID,
 			USERNAME,
