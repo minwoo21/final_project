@@ -24,12 +24,32 @@
 		<!-- WHERE  LESSON_MEMBER.MEMBER_ID = #{MEMBER_ID}; -->
 	</select>
 
-	<insert id="update" parameterType="Map">
-	    
-	</insert>
+	<update id="update" parameterType="Map">
+
+	</update>
 
 	<insert id="insert" parameterType="Map">
-	    
+		insert into LESSON (
+			LESSON_NUM			
+			, TYPE			
+			, LESSON_NAME			
+			, LESSON_PRO
+			, LESSON_TIME
+			, LESSON_PLACE
+			, LESSON_LIMIT
+			, LESSON_START
+			, LESSON_END
+			) values (
+			#{LESSON_NUM}			
+			, #{TYPE}			
+			, #{LESSON_NAME}			
+			, #{LESSON_PRO}			
+			, #{LESSON_TIME}
+			, #{LESSON_PLACE}
+			, #{LESSON_LIMIT}
+			, #{LESSON_START}
+			, #{LESSON_END}	
+			)	    
 	</insert>
 
 	<delete id="delete" parameterType="Map">

@@ -32,12 +32,20 @@
             <div class="w3-left row mx-1">
                 <button class="w3-bar-item w3-button w3-xlarge " formaction="/" formmethod="POST">Home</button>
                 <button class="w3-bar-item w3-button w3-xlarge " formaction="/lesson/myclass" formmethod="POST">내강의</button>
-                <button class="w3-bar-item w3-button w3-xlarge " formaction="#" formmethod="POST">강의신청</button>
+                <button class="w3-bar-item w3-button w3-xlarge " formaction="/lesson/enrolment" formmethod="POST">강의신청</button>
+                <button class="w3-bar-item w3-button w3-xlarge " formaction="/lesson/makelesson" formmethod="POST">강의 만들기</button>
                 <button class="w3-bar-item w3-button w3-xlarge " formaction="#" formmethod="POST">내 할일</button>
             </div>
-            <div class="w3-right row">
-                <button class="w3-bar-item w3-button w3-xlarge " formaction="#" formmethod="POST">내 정보</button>
-                <button class="w3-bar-item w3-button w3-xlarge " formaction="#" formmethod="POST">로그아웃</button>
+            <div class="p-1">
+                <div class="row">
+                    <div class="col pb-1 px-0 text-right">
+                        <span th:text="${name}"></span>(<span th:text="${username}"></span>)님, 환영합니다.
+                    </div>
+                </div>
+                <div class="row justify-content-end">
+                <button class="w3-button w3-small px-2 py-0" formaction="#" formmethod="POST">내 정보</button>
+                <button class="w3-button w3-small px-2 py-0" formaction="#" formmethod="POST">로그아웃</button>
+                </div>
             </div>
         </form>
 

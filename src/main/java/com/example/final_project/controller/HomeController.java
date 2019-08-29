@@ -23,38 +23,48 @@ public class HomeController {
         String login = (String) paramMap.get("login");
         String viewName = new String();
         if (loginID != null) {
+            //로그인 상태 시
             viewName = "home";
-            modelandView.addObject("loginid", loginID);
+            modelandView = memberservice.checkLogin(paramMap, viewName);
         } else if (login == null) {
+            //초기접속 시
             viewName = "login";
-        } else if (login.equals("try") == true) {
+        } else if (login.equals("try")) {
+            //로그인 시도 시
             String username = (String) paramMap.get("username");
             String password = (String) paramMap.get("password");
             loginID = (String) memberservice.doLogin(username, password);
             if (loginID == null) {
+                //로그인 실패
                 modelandView.addObject("login", "error");
                 viewName = "login";
             } else {
-                modelandView.addObject("loginid", loginID);
+                //로그인 성공
                 viewName = "home";
+                paramMap.put("loginid", loginID);
+                modelandView = memberservice.checkLogin(paramMap, viewName);
             }
         } else if (login.equals("signup")) {
+            //회원가입 완료 시
             Object demo = memberservice.doSignup(paramMap);
-            if (demo.equals(1) == true) {
+            if (demo.equals(1)) {
+                //가입 성공
                 modelandView.addObject("login", "signupsuccess");
             } else {
+                //가입 실패
                 modelandView.addObject("login", "signupfail");
             }
             viewName = "login";
         } else {
             viewName = "login";
         }
-
-
-        
         modelandView.setViewName(viewName);
 
-        Map<String, Object> resultMap = new HashMap<String, Object>();
         return modelandView;
+    }
+
+    @RequestMapping(value = "/signup", method = { RequestMethod.GET, RequestMethod.POST })
+    public void byPass() {
+
     }
 }

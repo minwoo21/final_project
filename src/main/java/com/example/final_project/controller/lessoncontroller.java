@@ -31,13 +31,18 @@ public class lessoncontroller {
 		Object resultMap = new HashMap<String, Object>() ;
 
 		// divided depending on action value
-		if ("enrolment".equals(action)) {
-            resultMap = service.getObject(paramMap);
+		if ("enrolment".equals(action) == true) {
+			if ("submit".equals(paramMap.get("makelesson")) == true) {
+				resultMap = service.inputlesson(paramMap);
+			}
+            resultMap = service.getList(paramMap);
             action = "enrolment";
 		} else if ("mylesson".equals(action)) {
             resultMap = service.getList(paramMap);
             action = "mylesson";
-		} else if ("myclass".equals(action)) {
+		} else if ("makelesson".equals(action)) {
+            action = "makelesson";
+        } else if ("myclass".equals(action)) {
             resultMap = service.getlesson(paramMap);
             action = "myclass";
 		} 
