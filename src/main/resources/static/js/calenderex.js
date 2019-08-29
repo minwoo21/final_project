@@ -107,20 +107,19 @@
 
 			events: [
 				{
-					title: 'All Day Event',
+					title: 'math homework',
 					start: new Date(y, m, 1)
 				},
 				{
 					id: 999,
-					title: 'Repeating Event',
-					start: new Date(y, m, d-3, 16, 0),
-					allDay: false,
-					className: 'info'
+					title: 'english homework',
+					start: new Date(y, m, 16, 16, 0),
+					
 				},
 				{
 					id: 999,
-					title: 'Repeating Event',
-					start: new Date(y, m, d+4, 16, 0),
+					title: 'math exam',
+					start: new Date(y, m, 31, 16, 0),
 					allDay: false,
 					className: 'info'
 				},
@@ -131,7 +130,7 @@
 					className: 'important'
 				},
 				{
-					title: 'Lunch',
+					title: 'science test',
 					start: new Date(y, m, d, 12, 0),
 					end: new Date(y, m, d, 14, 0),
 					allDay: false,
@@ -143,13 +142,7 @@
 					end: new Date(y, m, d+1, 22, 30),
 					allDay: false,
 				},
-				{
-					title: 'Click for Google',
-					start: new Date(y, m, 28),
-					end: new Date(y, m, 29),
-					url: 'http://google.com/',
-					className: 'success'
-				}
+				
 			],
 		});
 
