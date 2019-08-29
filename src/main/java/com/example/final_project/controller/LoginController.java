@@ -25,11 +25,13 @@ public class LoginController {
         if (loginID != null) {
             viewName = "home";
             modelandView.addObject("loginid", loginID);
+        } else if (login == null) {
+            viewName = "login";
         } else if (login.equals("try") == true) {
             String username = (String) paramMap.get("username");
             String password = (String) paramMap.get("password");
             loginID = (String) service.doLogin(username, password);
-            if (loginID.equals(null)) {
+            if (loginID == null) {
                 modelandView.addObject("login", "error");
                 viewName = "login";
             } else {
