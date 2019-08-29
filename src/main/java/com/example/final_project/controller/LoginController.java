@@ -19,7 +19,7 @@ public class LoginController {
 
     @RequestMapping(value = "/", method = { RequestMethod.GET, RequestMethod.POST })
     public ModelAndView actionMethod(@RequestParam Map<String, Object> paramMap, ModelAndView modelandView) {
-        String loginID = (String) paramMap.get("loginid");
+        Integer loginID = (Integer) paramMap.get("loginid");
         String login = (String) paramMap.get("login");
         String viewName = new String();
         if (loginID != null) {
@@ -30,7 +30,7 @@ public class LoginController {
         } else if (login.equals("try") == true) {
             String username = (String) paramMap.get("username");
             String password = (String) paramMap.get("password");
-            loginID = (String) service.doLogin(username, password);
+            loginID = (Integer) service.doLogin(username, password);
             if (loginID == null) {
                 modelandView.addObject("login", "error");
                 viewName = "login";

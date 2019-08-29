@@ -3,7 +3,7 @@
 -- MEMBER Table Create SQL
 CREATE TABLE MEMBER
 (
-    `MEMBER_ID`          VARCHAR(45)    NOT NULL    AUTO_INCREMENT COMMENT '회원번호', 
+    `MEMBER_ID`          INTEGER        NOT NULL    AUTO_INCREMENT COMMENT '회원번호', 
     `USERNAME`           VARCHAR(45)    NOT NULL    COMMENT '회원아이디', 
     `PASSWORD`           VARCHAR(45)    NOT NULL    COMMENT '패스워드', 
     `NAME`               VARCHAR(45)    NOT NULL    COMMENT '회원이름', 
