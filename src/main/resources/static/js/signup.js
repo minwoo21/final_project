@@ -4,12 +4,13 @@ $(function () {
     $('#idsuccess').hide();
     $('#idfail').hide();
     $('#iderror').hide();
+    $("#submit").attr("disabled", "disabled");
     $('#idcheck').click(function () {
         var data = {}
         data["username"] = $('#username').val();
 
         $.ajax({
-            contentType:'application/json',
+            contentType: 'application/json',
             datatype: 'json',
             data: JSON.stringify(data),
             url: '/signup/idcheck',
@@ -17,6 +18,7 @@ $(function () {
             success: function (response) {
                 if (response == 'success') {
                     $('#idsuccess').show();
+                    $("#submit").removeAttr("disabled");
                 } else {
                     $('#idfail').show();
                 }
@@ -30,6 +32,7 @@ $(function () {
         $('#idsuccess').hide();
         $('#idfail').hide();
         $('#iderror').hide();
+        $("#submit").attr("disabled", "disabled");
         if ($('#username').val() == '') {
             $('#idcheck').attr("disabled", "disabled");
         } else {
