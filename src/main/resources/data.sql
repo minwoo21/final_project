@@ -1,11 +1,11 @@
 insert into MEMBER
-values(14671,'user1','1234','홍길동','user','user1@gmail.com','010-1111-1111','01010','가나','다나','101','0101');
+values(14671,'user1','1234','홍길동','user','user1@gmail.com','010-1111-1111','01010','가나','101','0101');
 insert into MEMBER
-values(14672,'user2','1234','김김','user','user2@gmail.com','010-1111-1111','01010','가나','다나','101','0101');
+values(14672,'user2','1234','김김','user','user2@gmail.com','010-1111-1111','01010','가나','101','0101');
 insert into MEMBER
-values(14673,'user3','1234','이잉','user','user3@gmail.com','010-1111-1111','01010','가나','다나','101','0101');
+values(14673,'user3','1234','이잉','user','user3@gmail.com','010-1111-1111','01010','가나','101','0101');
 insert into MEMBER
-values(14674,'user4','1234','우앙','admin','user4@gmail.com','010-1111-1111','01010','가나','다나','101','0101');
+values(14674,'user4','1234','우앙','admin','user4@gmail.com','010-1111-1111','01010','가나','101','0101');
 
 -- 강의
 insert into LESSON
