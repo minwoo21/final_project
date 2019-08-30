@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.RedirectView;
 
 @Controller
 public class HomeController {
@@ -76,5 +77,12 @@ public class HomeController {
         String resultString = new String();
         resultString = (memberservice.checkUsername((String) paramMap.get("username")) == true) ? "success" : "";
         return resultString;
+    }
+
+    @RequestMapping(value = "/logout", method = RequestMethod.POST)
+    public ModelAndView logout() {
+        ModelAndView modelAndView = new ModelAndView();
+        modelAndView.setView(new RedirectView("/"));
+        return modelAndView;
     }
 }
