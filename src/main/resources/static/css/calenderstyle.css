@@ -1,9 +1,11 @@
 #calendarbody {
-    /* margin-top: 40px; */
+    padding-top: 60px; 
     text-align: center;
     font-size: 14px;
     font-family: "Helvetica Nueue",Arial,Verdana,sans-serif;
-    background-color: #DDDDDD;
+    background-color: gray;
+    border-color:black;
+    padding-bottom:200px;
     }
 
 #wrap {
