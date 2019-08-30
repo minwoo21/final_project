@@ -11,13 +11,13 @@
                         <div class="pb-5">
                             과제명: <input type="text" name="HW_NAME">
                             작성자: <input type="text" name="LESSON_NUM">
-                            날짜 : <input type="date" name="DATE">
+                            마감일 : <input type="date" name="DATE">
                         </div>
                         
                         <textarea cols="100" rows="8" name="CONTENT"></textarea>
-                        <div>
-                            <button type="submit" formaction="/class/make" formmethod="POST">올리기</button>
-                            <button type="submit" formaction="/class/homework">취소</button>
+                        <div class="d-flex justify-content-end">
+                            <button type="submit" class="btn btn-outline-secondary mx-2" formaction="/class/make" formmethod="POST">올리기</button>
+                            <button type="submit" class="btn btn-outline-secondary mx-2" formaction="/class/homework">취소</button>
                         </div>
                     </form>
                     

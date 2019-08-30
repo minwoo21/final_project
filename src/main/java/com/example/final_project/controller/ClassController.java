@@ -49,7 +49,7 @@ public class ClassController {
 			resultMap = classService.getnoticeObject(paramMap);
 			action = "/notice_detail";
 		}else if ("introduction".equals(action)) {
-			action = "introduction";
+			action = "/introduction";
 		} else if ("homework".equals(action)) {
 			resultMap = hwService.getList(paramMap);
 			action = "/homework";
@@ -81,6 +81,9 @@ public class ClassController {
 		}else if ("hwcheck".equals(action)) {
 			resultMap = hwService.getmember(paramMap);
 			action = "/hwcheck";
+		}else if ("notice_check".equals(action)) {
+			resultMap = classService.getnoticeObject(paramMap);
+			action = "/notice_check";
 		}
 
 		String viewName = MAPPING + type + action;
