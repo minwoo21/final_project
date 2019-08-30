@@ -101,7 +101,7 @@ public class lessonservice {
 	public Object inputlesson01(Object dataMap) {
 		String sqlMapId = "LESSON.insert01";
 
-		Integer resultKey = (Integer) dao.saveObject01(sqlMapId, dataMap);
+		Integer resultKey = (Integer) dao.saveObject(sqlMapId, dataMap);
 
 		Object resultObject = this.getObject(dataMap);
 

@@ -59,7 +59,7 @@
 			, LESSON_NUM
 		) values (
 			#{LIST_NUM}
-			, #{MEMBER_ID}
+			, #{loginid}
 			, #{LESSON_NUM}
 		)
 	 </insert>

@@ -43,7 +43,7 @@ public class lessoncontroller {
 		} else if ("makelesson".equals(action)) {
             action = "makelesson";
         } else if ("myclass".equals(action)) {
-			if ("submit".equals(paramMap.get("LESSON_NUM"))) {
+			if (paramMap.get("LESSON_NUM") != null) {
 				resultMap = service.inputlesson01(paramMap);
 			}
 			resultMap = service.getlesson(paramMap);
