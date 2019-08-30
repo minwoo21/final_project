@@ -1,6 +1,9 @@
 package com.example.final_project.service;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 import com.example.final_project.dao.ClassDao;
@@ -45,6 +48,10 @@ public class ClassService {
 		return resultObject;
 	}
 	public Object saveObject(Map<String, Object> dataMap) {
+		SimpleDateFormat mSimpleDateFormat = new SimpleDateFormat ( "yyyy-MM-dd", Locale.KOREA );
+		Date currentTime = new Date ();
+		String mTime = mSimpleDateFormat.format ( currentTime );
+		dataMap.put("DATE", mTime);
 		
 		String sqlMapId = "classnotice.insert";
 
