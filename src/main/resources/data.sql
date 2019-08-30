@@ -7,7 +7,7 @@ values(14673,'user3','3456','이몽룡','user','lee@example.org','010-1111-2222'
 insert into MEMBER
 values(14674,'user4','4567','임꺽정','admin','lim@example.com','010-1111-1111','13600','경기 성남시 분당구 수내로 174','205동 1201호',' (수내동, 푸른마을벽산아파트)');
 insert into MEMBER
-values(14675,'user5','4567','이순신','admin','legend@example.com','010-1592-9999','13607','경기 성남시 분당구 백현로 206','403동 602호',' (정자동, 한솔마을주공4단지아파트)');
+values(14675,'user5','5678','이순신','admin','legend@example.com','010-1592-9999','13607','경기 성남시 분당구 백현로 206','403동 602호',' (정자동, 한솔마을주공4단지아파트)');
 
 -- 강의
 insert into LESSON
