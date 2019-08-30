@@ -10,6 +10,7 @@ CREATE TABLE MEMBER
     `PHONE`              VARCHAR(45)    NULL        COMMENT '전화번호', 
     `ADDRESS_ZIPCODE`    VARCHAR(45)    NULL        COMMENT '우편번호', 
     `ADDRESS_ROAD`       VARCHAR(45)    NULL        COMMENT '도로명주소', 
+    `ADDRESS_LAND`       VARCHAR(45)    NULL        COMMENT '지번주소', 
     `ADDRESS_DETAIL`     VARCHAR(45)    NULL        COMMENT '상세주소', 
     `ADDRESS_SUBDETAIL`  VARCHAR(45)    NULL        COMMENT '주소추가정보', 
     PRIMARY KEY (MEMBER_ID)
