@@ -1,29 +1,35 @@
 <div xmlns:th="http://www.thymeleaf.org" layout:decorator="layout/defaultLayout">
-    <th:block layout:fragment="sidebar"> <th:block th:replace="fragments/sidebar :: sidebar_admin"></th:block> </th:block>
+    <th:block layout:fragment="sidebar">
+        <th:block th:replace="fragments/sidebar :: sidebar_admin"></th:block>
+    </th:block>
     <th:block layout:fragment="body">
-            <div class="container py-5">
-                <h3>과제</h3>
-                <div class="dropdown-divider"></div>
-                <div>
-                    <form>
-                        <th:block th:replace="fragments/login"></th:block>
-                        <th:block th:replace="fragments/lesson"></th:block>
-                        <div class="pb-5">
-                            과제명: <input type="text" name="HW_NAME">
-                            작성자: <input type="text" name="LESSON_NUM">
-                            마감일 : <input type="date" name="DATE">
-                        </div>
-                        
-                        <textarea cols="100" rows="8" name="CONTENT"></textarea>
-                        <div class="d-flex justify-content-end">
-                            <button type="submit" class="btn btn-outline-secondary mx-2" formaction="/class/make" formmethod="POST">올리기</button>
-                            <button type="submit" class="btn btn-outline-secondary mx-2" formaction="/class/homework">취소</button>
-                        </div>
-                    </form>
-                    
-                </div>
-               
-                
+        <div class="container py-5">
+            <h3>과제</h3>
+            <div class="dropdown-divider"></div>
+            <div>
+                <form>
+                    <th:block th:replace="fragments/login"></th:block>
+                    <th:block th:replace="fragments/lesson"></th:block>
+                    <div class="form-inline pb-5">
+                        <label class="mx-2" for="">과제명:</label><input type="text" class="form-control" name="HW_NAME">
+                        <label class="mx-2" for="">작성자:</label><input type="text" class="form-control" name="LESSON_NUM"
+                            th:value="${paramMap.MEMBER_NAME}" readonly>
+                        <label class="mx-2" for="">마감일:</label><input type="date" class="form-control" name="DATE">
+                    </div>
+
+                    <label for="content">내용</label>
+                    <textarea cols="100" rows="8" name="CONTENT" class="form-control"></textarea>
+                    <div class="d-flex justify-content-end my-2">
+                        <button type="submit" class="btn btn-outline-secondary mx-2" formaction="/class/make"
+                            formmethod="POST">올리기</button>
+                        <button type="submit" class="btn btn-outline-secondary mx-2"
+                            formaction="/class/homework">취소</button>
+                    </div>
+                </form>
+
             </div>
+
+
+        </div>
     </th:block>
 </div>

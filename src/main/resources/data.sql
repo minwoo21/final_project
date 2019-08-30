@@ -44,6 +44,8 @@ insert into LESSON_MEMBER
 values(005, 14673, 0001);
 insert into LESSON_MEMBER
 values(006, 14674, 0001);
+insert into LESSON_MEMBER
+values(007, 14675, 0001);
 
 
 
