@@ -107,37 +107,37 @@
 
 			events: [
 				{
-					title: 'math homework',
+					title: '미적분 과제',
 					start: new Date(y, m, 1)
 				},
 				{
 					id: 999,
-					title: 'english homework',
+					title: '기구학 레포트 제출',
 					start: new Date(y, m, 16, 16, 0),
 					
 				},
 				{
 					id: 999,
-					title: 'math exam',
+					title: 'java 소과제',
 					start: new Date(y, m, 31, 16, 0),
 					allDay: false,
 					className: 'info'
 				},
 				{
-					title: 'Meeting',
+					title: 'mt',
 					start: new Date(y, m, d, 10, 30),
 					allDay: false,
 					className: 'important'
 				},
 				{
-					title: 'science test',
+					title: '정역학 레포트',
 					start: new Date(y, m, d, 12, 0),
 					end: new Date(y, m, d, 14, 0),
 					allDay: false,
 					className: 'important'
 				},
 				{
-					title: 'Birthday Party',
+					title: 'c언어 코딩시험',
 					start: new Date(y, m, d+1, 19, 0),
 					end: new Date(y, m, d+1, 22, 30),
 					allDay: false,
