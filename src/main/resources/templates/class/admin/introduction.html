@@ -1,0 +1,51 @@
+<div xmlns:th="http://www.thymeleaf.org" layout:decorator="layout/defaultLayout">
+    <th:block layout:fragment="sidebar"> <th:block th:replace="fragments/sidebar :: sidebar_admin"></th:block> </th:block>
+    <th:block layout:fragment="body">
+        <div class="container pt-5">
+            <h3>교과목 기본정보</h3>
+            <table class="table">
+                <tr>
+                    <td class="bg-light">수업명</td>
+                    <td>수학1</td>
+                    <td class="bg-light">분야</td>
+                    <td>전공</td>
+                </tr>
+                <tr>
+                    <td class="bg-light">강의 시간</td>
+                    <td>3</td>
+                    <td class="bg-light">위치</td>
+                    <td>수학관</td>
+                </tr>
+                <tr>
+                    <td class="bg-light">강의 기간</td>
+                    <td>2019.8.30~2019.11.30</td>
+                    <td class="bg-light">교수명</td>
+                    <td>김땡땡</td>
+                </tr>
+
+
+
+            </table>
+            <table class="table">
+            <h3>교과목 설명</h3>
+            <tr>
+                <td class="bg-light">교과목 개요</td>
+                <td>미분적분학은 모든 현대수학 뿐만 아니라 과학기술의 기본개념이므로 이에 대한 바른 이해와 응용능력을 길러 이공계 분야의 전공에 필요한 토대를 마련하게 한다. 아울러 창의성과 응용성을 갖춘 수학적 사고를 기르도록 한다. 교육내용은 일변수 함수들의 극한, 미분, 적분을 공부하여, 이들을 이용한 응용문제를 해결한다.</td>
+            </tr>
+            <tr>
+                <td class="bg-light">연계 교과목 정보</td>
+                <td>후수 과목 : 일반수학2 , 공학수학1,2</td>
+            </tr>
+            <tr>
+                <td class="bg-light">학습목표</td>
+                <td>1. 미분적분학에서 다루게 되는 수학용어를 이해하고 설명할 수 있다. <br>
+                        2. 기초함수들과 초월함수들의 미분과 적분을 구할 수 있다. <br>
+                        3. 해석가능한 함수들의 그래프를 이해하고 그릴 수 있다. <br>
+                        4. 함수와 관련된 넓이, 곡선의 길이 및 회전체의 부피를 구할 수 있다.<br> 
+                        5. 일변수 함수의 미분 및 적분에 관련된 응용문제들을 해결 할 수 있다.<br></td>
+            </tr>
+        </table>
+    </div>
+        
+    </th:block>
+</div>
