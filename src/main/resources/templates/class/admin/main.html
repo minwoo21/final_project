@@ -16,9 +16,10 @@
                     <div class="col-6">
                         <div class="card mb-3">
                             <div class="row no-gutters">
-                                <div class="col-md-4">
+                                <div class="col-4 d-flex justify-content-center">
+                                        <img th:attr="src=@{/img.png}" style="width: 100px">
                                 </div>
-                                <div class="col-md-8">
+                                <div class="col-8">
                                     <div class="card-body">
                                             <h5 class="card-title">교수 정보</h5>
                                         <h5 class="card-text" th:text=${resultMap.LESSON_PRO}></h5>
