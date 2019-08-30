@@ -58,6 +58,9 @@ public class HomeController {
                 modelandView.addObject("login", "signupfail");
             }
             viewName = "login";
+        } else if (login.equals("logout")) {
+            modelandView.addObject("login", "logout");
+            viewName = "login";
         } else {
             viewName = "login";
         }
@@ -82,7 +85,7 @@ public class HomeController {
     @RequestMapping(value = "/logout", method = RequestMethod.POST)
     public ModelAndView logout() {
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.setView(new RedirectView("/"));
+        modelAndView.setView(new RedirectView("/?login=logout"));
         return modelAndView;
     }
 }

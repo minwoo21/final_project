@@ -12,6 +12,9 @@
     <form action="/" name="login" method="POST">
         <input type="hidden" name="login" value="try">
         <!-- 상단 알림 (조건부 작동) -->
+        <div th:if="${login}==logout" class="alert alert-primary" role="alert">
+            로그아웃 되었습니다.
+        </div>
         <div th:if="${login}==signupsuccess" class="alert alert-primary" role="alert">
             회원 가입이 완료되었습니다.
         </div>
@@ -28,7 +31,8 @@
                 <div class="input-group-prepend">
                     <span class="input-group-text"><span class="fas fa-user"></span></span>
                 </div>
-                <input type="text" class="form-control ime-mode" placeholder="아이디" name="username" id="username" required>
+                <input type="text" class="form-control ime-mode" placeholder="아이디" name="username" id="username"
+                    required>
             </div>
         </div>
         <!-- 패스워드 -->
