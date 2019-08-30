@@ -38,7 +38,7 @@ public class MemberService {
     }
 
     public Boolean checkUsername(String username) {
-        String sqlMapId = "member.login";
+        String sqlMapId = "member.checkusername";
         Integer usernameExist = (Integer) dao.getObject(sqlMapId, username);
         Boolean result = (usernameExist == null) ? true : false;
         return result;
