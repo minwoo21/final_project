@@ -1,11 +1,13 @@
 insert into MEMBER
-values(14671,'user1','1234','홍길동','user','user1@gmail.com','010-1111-1111','01010','가나', '다나','101','0101');
+values(14671,'user1','1234','홍길동','user','hong@example.com','010-1234-5678','06267','서울 강남구 남부순환로 2615', '101동 2001호',' (도곡동, 극동스타클래스)');
 insert into MEMBER
-values(14672,'user2','1234','김김','user','user2@gmail.com','010-1111-1111','01010','가나','다나','101','0101');
+values(14672,'user2','2345','성춘향','user','sung@example.net','010-1111-0000','07620','서울 강서구 개화동로 551','2층',' (방화동)');
 insert into MEMBER
-values(14673,'user3','1234','이잉','user','user3@gmail.com','010-1111-1111','01010','가나','다나','101','0101');
+values(14673,'user3','3456','이몽룡','user','lee@example.org','010-1111-2222','04160','서울 마포구 큰우물로 28','102동 202호',' (용강동, 래미안아파트)');
 insert into MEMBER
-values(14674,'user4','1234','우앙','admin','user4@gmail.com','010-1111-1111','01010','가나','다나','101','0101');
+values(14674,'user4','4567','임꺽정','admin','lim@example.com','010-1111-1111','13600','경기 성남시 분당구 수내로 174','205동 1201호',' (수내동, 푸른마을벽산아파트)');
+insert into MEMBER
+values(14675,'user5','4567','이순신','admin','legend@example.com','010-1592-9999','13607','경기 성남시 분당구 백현로 206','403동 602호',' (정자동, 한솔마을주공4단지아파트)');
 
 -- 강의
 insert into LESSON
@@ -33,13 +35,15 @@ values(0010, '전공', '심화학', '변땡땡', 3, '화학관', 40, '2019.08.30
 insert into LESSON_MEMBER
 values(001, 14671, 0001);
 insert into LESSON_MEMBER
-values(002, 14672, 0009);
+values(002, 14671, 0009);
 insert into LESSON_MEMBER
 values(003, 14672, 0008);
 insert into LESSON_MEMBER
-values(004, 14673, 0009);
+values(004, 14672, 0009);
 insert into LESSON_MEMBER
-values(005, 14674, 0001);
+values(005, 14673, 0001);
+insert into LESSON_MEMBER
+values(006, 14674, 0001);
 
 
 

@@ -1,5 +1,7 @@
 //아이디 중복체크
 $(function () {
+    var idok = 0;
+    var pwok = 0;
     $('#idcheck').attr("disabled", "disabled");
     $('#idsuccess').hide();
     $('#idfail').hide();
@@ -18,13 +20,20 @@ $(function () {
             success: function (response) {
                 if (response == 'success') {
                     $('#idsuccess').show();
-                    $("#submit").removeAttr("disabled");
+                    idok = 1;
+                    if (idok == 1 && pwok == 1) {
+                        $("#submit").removeAttr("disabled");
+                    }
                 } else {
                     $('#idfail').show();
+                    idok = 0;
+                    $('#username').focus();
                 }
             },
             error: function () {
                 $('#iderror').show();
+                idok = 0;
+                $('#username').focus();
             }
         })
     });
@@ -44,11 +53,14 @@ $(function () {
     $(".pwbox").keyup(function () {
         var pwd1 = $("#pwd1").val();
         var pwd2 = $("#pwd2").val();
-        if (pwd1 != "" || pwd2 != "") {
+        if (pwd1 != "" && pwd2 != "") {
             if (pwd1 == pwd2) {
                 $("#pwsuccess").show();
                 $("#pwfail").hide();
-                $("#submit").removeAttr("disabled");
+                pwok = 1;
+                if (idok == 1 && pwok == 1) {
+                    $("#submit").removeAttr("disabled");
+                }
             } else {
                 $("#pwsuccess").hide();
                 $("#pwfail").show();
@@ -57,6 +69,7 @@ $(function () {
         } else {
             $("#pwsuccess").hide();
             $("#pwfail").hide();
+            $("#submit").attr("disabled", "disabled");
         }
     });
 })
@@ -147,30 +160,30 @@ function execDaumPostcode() {
             // 우편번호와 주소 정보를 해당 필드에 넣는다.
             document.getElementById('postcode').value = data.zonecode;
             document.getElementById("roadAddress").value = roadAddr;
-            document.getElementById("jibunAddress").value = data.jibunAddress;
+            // document.getElementById("jibunAddress").value = data.jibunAddress;
 
-            // 참고항목 문자열이 있을 경우 해당 필드에 넣는다.
+            //참고항목 문자열이 있을 경우 해당 필드에 넣는다.
             if (roadAddr !== '') {
                 document.getElementById("extraAddress").value = extraRoadAddr;
             } else {
                 document.getElementById("extraAddress").value = '';
             }
 
-            var guideTextBox = document.getElementById("guide");
-            // 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
-            if (data.autoRoadAddress) {
-                var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
-                guideTextBox.innerHTML = '(예상 도로명 주소 : ' + expRoadAddr + ')';
-                guideTextBox.style.display = 'block';
+            // var guideTextBox = document.getElementById("guide");
+            // // 사용자가 '선택 안함'을 클릭한 경우, 예상 주소라는 표시를 해준다.
+            // if (data.autoRoadAddress) {
+            //     var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
+            //     guideTextBox.innerHTML = '(예상 도로명 주소 : ' + expRoadAddr + ')';
+            //     guideTextBox.style.display = 'block';
 
-            } else if (data.autoJibunAddress) {
-                var expJibunAddr = data.autoJibunAddress;
-                guideTextBox.innerHTML = '(예상 지번 주소 : ' + expJibunAddr + ')';
-                guideTextBox.style.display = 'block';
-            } else {
-                guideTextBox.innerHTML = '';
-                guideTextBox.style.display = 'none';
-            }
+            // } else if (data.autoJibunAddress) {
+            //     var expJibunAddr = data.autoJibunAddress;
+            //     guideTextBox.innerHTML = '(예상 지번 주소 : ' + expJibunAddr + ')';
+            //     guideTextBox.style.display = 'block';
+            // } else {
+            //     guideTextBox.innerHTML = '';
+            //     guideTextBox.style.display = 'none';
+            // }
         }
     }).open();
 }

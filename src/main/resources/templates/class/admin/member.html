@@ -21,7 +21,7 @@
                                 <td th:text=${resultData.NAME}></th>
                                 <td th:text=${resultData.PHONE}></th>
                                 <td th:text=${resultData.EMAIL}></th>
-                                <td th:text=${resultData.ADDRESS_ROAD}></th>
+                                <td th:text="${resultData.ADDRESS_ROAD}+', '+${resultData.ADDRESS_DETAIL}+${resultData.ADDRESS_SUBDETAIL}"></th>
                             </tr>
                         </tbody>
                     </table>
