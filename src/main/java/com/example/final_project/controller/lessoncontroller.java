@@ -34,9 +34,11 @@ public class lessoncontroller {
 		if ("enrolment".equals(action)) {
 			if ("submit".equals(paramMap.get("makelesson"))) {
 				resultMap = service.inputlesson(paramMap);
-			}
+				action = "makelesson";
+			}else
+				action = "enrolment";
             resultMap = service.getList(paramMap);
-            action = "enrolment";
+            
 		} else if ("mylesson".equals(action)) {
             resultMap = service.getList(paramMap);
             action = "mylesson";

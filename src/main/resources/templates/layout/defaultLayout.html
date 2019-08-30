@@ -47,10 +47,14 @@
                 <button class="w3-bar-item w3-button w3-xlarge " formaction="/" formmethod="POST">내 할일</button>
                 <button class="w3-bar-item w3-button w3-xlarge " formaction="/lesson/myclass"
                     formmethod="POST">내강의</button>
+                <th:block th:if="${membertype}==user"> 
                 <button class="w3-bar-item w3-button w3-xlarge " formaction="/lesson/enrolment"
                     formmethod="POST">강의신청</button>
+                </th:block>
+                <th:block th:if="${membertype}==admin">
                 <button class="w3-bar-item w3-button w3-xlarge " formaction="/lesson/makelesson" formmethod="POST">강의
                     만들기</button>
+                </th:block>
                
             </div>
             <div class="p-1">
